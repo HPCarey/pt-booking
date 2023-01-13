@@ -397,12 +397,15 @@ This tutorial for setting up email with Django using Gmail.
 ### Websites:
 
 ### Articles:
-The following articles helped me to understand and apply certain features and concepts.
+The following article helped me create the dropdown menu for the gender option in the appoinments model.
+* [Stack Overflow](https://stackoverflow.com/questions/31130706/dropdown-in-django-model)
+
+
 * [w3schools](https://www.w3schools.com)
 
 * []()
 
-* [Stack Overflow](https://stackoverflow.com)
+
 
 * []()
 
