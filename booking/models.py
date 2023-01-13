@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import gettext_lazy as _
 from django.db.models import IntegerField
 from django.core.validators import MinValueValidator, MaxValueValidator
 from cloudinary.models import CloudinaryField
@@ -8,19 +9,22 @@ import datetime
 
 # Create your models here.
 
-GENDER_CHOICES = (
-    ('male', 'MALE'),
-    ('female', 'FEMALE'),
-    ('other', 'OTHER'),
-)
-
 
 class Gender(models.Model):
     """
     Model for creating the gender dropdown list
-    Source: https://stackoverflow.com/questions/31130706/dropdown-in-django-model
+    Source:https://docs.djangoproject.com/en/4.1/ref/models/fields/#field-choices
     """
-    gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default='')
+    class Gender_Choices(models.TextChoices):
+        MALE = 'MA', _('Male')
+        FEMALE = 'FE', _('Female')
+        OTHER = 'OT', _('Other')
+
+    gender_choices = models.CharField(
+        max_length=2,
+        choices=Gender_Choices.choices,
+        default=Gender_Choices.MALE,
+    )
 
 
 class Book_Appointment(models.Model):
@@ -36,8 +40,8 @@ class Book_Appointment(models.Model):
         blank=False,
         default=0,
         validators=[
-            MinValueValidator(18),
-            MaxValueValidator(90)
+            MinValueValidator(1),
+            MaxValueValidator(2)
             ]
         )
     gender = models.ForeignKey(

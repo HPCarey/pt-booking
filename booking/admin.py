@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Book_Appointment
+from .models import Gender
 
-# Register your models here.
+admin.site.register(Gender)
+admin.site.register(Book_Appointment)
