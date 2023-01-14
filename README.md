@@ -40,11 +40,11 @@ You can visit the live site [here]()
 [Back to top](#contents)
 ### **Agile Methodology**
 #### **GitHub Project Board**
-![Screenshot of project board](static/images/readme_images/)
+![Screenshot of project board](static/readme/)
 [Back to top](#contents)
 ### **Wireframes**
 Wireframes were created using Balsamiq.
-![Index](static/images/readme_images/Index.png)
+![Index](static/readme/pt-booking-app.pdf)
 ![Booking when signed in](static/images/readme_images/Booking%2C%20when%20signed%20in.png)
 ![Booking when logged out](static/images/readme_images/Booking%2C%20when%20not%20signed%20in.png)
 ![Signup](static/images/readme_images/Signup.png)
@@ -55,8 +55,8 @@ Wireframes were created using Balsamiq.
 
 ### **Database**
 [Lucid chart](https://www.lucidchart.com/pages/) was used to make the entity relationship diagram showing my custom models and the user model which is built with Django AllAuth. Lucid chart was also used to make the flow chart mapping out the user journey throuh the site. 
-![Database](static/images/readme_images/database_schema.jpg)
-![Database](static/images/readme_images/database_schema.jpg)
+![Database](static/readme/pp4-lucid-chart.pdf)
+![Database](static/readme/entity_relationship_diagram%20(1).pdf)
 
 [Back to top](#contents)
 ### **Design**
