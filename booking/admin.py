@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book_Appointment, Gender
+from .models import BookAppointment, Gender
 from django_summernote.admin import SummernoteModelAdmin
 
 

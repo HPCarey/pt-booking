@@ -15,7 +15,7 @@ class Gender(models.Model):
     Model for creating the gender dropdown list
     Source:https://docs.djangoproject.com/en/4.1/ref/models/fields/#field-choices
     """
-    class Gender_Choices(models.TextChoices):
+    class GenderChoices(models.TextChoices):
         MALE = 'MA', _('Male')
         FEMALE = 'FE', _('Female')
         OTHER = 'OT', _('Other')
@@ -27,7 +27,7 @@ class Gender(models.Model):
     )
 
 
-class Book_Appointment(models.Model):
+class BookAppointment(models.Model):
     """
     Model to store appointment details
     """
