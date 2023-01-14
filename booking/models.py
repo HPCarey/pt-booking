@@ -40,8 +40,8 @@ class Book_Appointment(models.Model):
         blank=False,
         default=0,
         validators=[
-            MinValueValidator(1),
-            MaxValueValidator(2)
+            MinValueValidator(18),
+            MaxValueValidator(90)
             ]
         )
     gender = models.ForeignKey(
