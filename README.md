@@ -40,23 +40,30 @@ You can visit the live site [here]()
 [Back to top](#contents)
 ### **Agile Methodology**
 #### **GitHub Project Board**
-![Screenshot of project board](static/readme/)
+![Screenshot of project board](static/readme/project_board.png)
+
 [Back to top](#contents)
+
 ### **Wireframes**
 Wireframes were created using Balsamiq.
-![Index](static/readme/pt-booking-app.pdf)
-![Booking when signed in](static/images/readme_images/Booking%2C%20when%20signed%20in.png)
-![Booking when logged out](static/images/readme_images/Booking%2C%20when%20not%20signed%20in.png)
-![Signup](static/images/readme_images/Signup.png)
-![My account](static/images/readme_images/My%20account.png)
-![Dashboard](static/images/readme_images/Admin%20dashboard.png)
+
+See [Wireframes.](static/readme/pt-booking-app.pdf)
+
+![Landing page](static/wireframes/landing_page.png)
+![Registration Page](static/wireframes/registration_page.png)
+![Booking Page](static/wireframes/booking_page.png)
+![Sign-in Page](static/wireframes/sign_in_page.png)
+![User Profile](static/wireframes/user_profile.png)
+
 
 [Back to top](#contents)
 
 ### **Database**
 [Lucid chart](https://www.lucidchart.com/pages/) was used to make the entity relationship diagram showing my custom models and the user model which is built with Django AllAuth. Lucid chart was also used to make the flow chart mapping out the user journey throuh the site. 
-![Database](static/readme/pp4-lucid-chart.pdf)
-![Database](static/readme/entity_relationship_diagram%20(1).pdf)
+
+![Flow Chart](static/readme/flow_chart.png)
+
+![Database](static/readme/entity_relationship_diagram%20.png)
 
 [Back to top](#contents)
 ### **Design**
@@ -76,7 +83,7 @@ Wireframes were created using Balsamiq.
 
  The next step was to go to input these hex values into the contrast grid on [Eightshapes](https://contrast-grid.eightshapes.com/) to check the WCAG 2.0 minimum contrast scores which helped me to pick a background and foreground colour that meet the accessibility requirements for good UX.
 
- ![Hero image](docs/README-images/hero-image.jpg)
+ ![Hero image](static/images/hero-image-girl%20-2.jpg)
 
  ![Colour Palette](docs/README-images/colour-palette.png)
 
