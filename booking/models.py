@@ -22,8 +22,8 @@ class Gender(models.Model):
 
     gender_choices = models.CharField(
         max_length=2,
-        choices=Gender_Choices.choices,
-        default=Gender_Choices.MALE,
+        choices=GenderChoices.choices,
+        default=GenderChoices.MALE,
     )
 
 

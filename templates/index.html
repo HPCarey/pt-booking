@@ -2,17 +2,37 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-
+<!-- hero image -->
+<section class="hero-outer">
+    <div class="hero-image"></div>
+    <div class="container" id="slogan-container" style="margin-left: 0px;">
+        <div class="row" id="slogan">
+            <div class="col-lg-5">
+                <div class="ml-5 opacity-75">
+                    <h1>
+                        Build Strength.
+                    </h1>
+                    <h1>
+                        Get Results
+                    </h1>
+                    <h1>
+                        Improve your Life.
+                    </h1>
+                </div>
             </div>
         </div>
     </div>
+    <div class="container" id="book-button-container">
+        <div class="row">
+            <div class="col-lg-3 col-9">
+                <a href="#"
+                    class="btn btn-secondary btn-lg btn-card d-flex mx-auto justify-content-center"
+                    id="book-button">Book
+                    Now!</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-</div>
 
 {%endblock%}

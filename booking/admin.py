@@ -8,7 +8,7 @@ class GenderAdmin(admin.ModelAdmin):
     list_display = ['gender_choices']
 
 
-@admin.register(Book_Appointment)
+@admin.register(BookAppointment)
 class AppointmentAdmin(SummernoteModelAdmin):
 
     list_display = ('first_name', 'last_name', 'date_time')
