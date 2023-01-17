@@ -25,10 +25,17 @@
     <div class="container" id="book-button-container">
         <div class="row">
             <div class="col-lg-3 col-9">
-                <a href="#"
+                {% if user.is_authenticated %}
+                <a href="#" class="btn btn-secondary btn-lg btn-card d-flex mx-auto justify-content-center"
+                    id="book-button">Book
+                    Now!</a>
+                {% else %}
+                <a href="{% url 'account_login' %}"
                     class="btn btn-secondary btn-lg btn-card d-flex mx-auto justify-content-center"
                     id="book-button">Book
                     Now!</a>
+
+                {% endif %}
             </div>
         </div>
     </div>

@@ -1,6 +1,10 @@
 body {
     background-color: #F9FAFC;
 }
+
+/* navbar */
+
+
 /* landing page */
 
 .hero-outer {
@@ -40,31 +44,12 @@ body {
     margin-left: 2rem;
 }
 
-.card:hover {
-    box-shadow: rgba(103 42 46 / 12%) 0px 0px 8px 0px, rgb(103 42 46 / 24%) 0px 8px 8px 0px;
-}
-
-.card-img-top {
-    /* align images in homepage treatment cards */
-    border-radius: 1rem;
-    margin: 0 auto;
-    margin-top: 19px;
-    width: 94%;
-}
-
 .full-width {
     /* class to extend max-width in bootstrap containers */
     max-width: 1400px;
 }
 
-.btn-card {
-    --bs-btn-bg: #BC8180;
-    --bs-btn-border-color: #BC8180;
-    --bs-btn-hover-bg: #A17772;
-    --bs-btn-hover-border-color: #A17772;
-    --bs-btn-active-bg: #672A2E;
-    --bs-btn-active-border-color: #672A2E;
-}
+
 
 .btn-card:hover {
     box-shadow: rgba(103 42 46 / 12%) 0px 0px 8px 0px, rgb(103 42 46 / 24%) 0px 8px 8px 0px;
