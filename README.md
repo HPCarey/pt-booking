@@ -40,7 +40,7 @@ You can visit the live site [here]()
 [Back to top](#contents)
 ### **Agile Methodology**
 #### **GitHub Project Board**
-![Screenshot of project board](static/readme/project_board.png)
+![Screenshot of project board](static/readme/project_board2.png)
 
 [Back to top](#contents)
 
