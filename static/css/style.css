@@ -2,6 +2,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: #F9FAFC;
+    font-weight: 700;
 }
 
 /* navbar */
@@ -24,35 +25,23 @@ body {
 .color-overlay {
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,.2);
+    background-color: rgba(0,0,0,.8);
 }
 
 .landing-text {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+    color: #fff;
 }
 
 .landing-text h1 {
-    font-size: 500%;
+    font-size: 300%;
     font-weight: 700
 }
     
-
-.btn-card:hover {
-    box-shadow: rgba(103 42 46 / 12%) 0px 0px 8px 0px, rgb(103 42 46 / 24%) 0px 8px 8px 0px;
-}
-
-.btn-login {
-    color: #4e4d4dbd;
-    --bs-btn-color: #BC8180;
-    --bs-btn-border-color: rgba(187, 128, 127, 0.83);
-    --bs-btn-hover-bg: #BC8180;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-border-color: #BC8180;
-    --bs-btn-active-bg: #BC8180;
-    --bs-btn-active-border-color: #BC8180;
-    border-radius: 1rem;
+.landing-text h2 {
+    font-size: 100%;
 }
 
 
@@ -65,40 +54,50 @@ body {
 }
 
 .main-bg {
-    background-color: #6E737A;
-    color: #fff;
+    background-color: #B9C4CA;
+    color: #000;
 }
 
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #19192D;
     color: #fff;
+    border-color: #6E737A;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #19192D;
+    font-weight: 700;
 }
 
 .link {
-    color: #23BBBB;
+    color: #0653C7;
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #217AFF;
     text-decoration: underline;
 }
 
 
 @media (max-width: 768px) {
     .bg-image {
-        height: 50vh;
+        background-image: url(https://res.cloudinary.com/dg4yiogei/image/upload/v1674067019/cropped_2_tb9xhh.jpg);
     }
+    /* .landing-text{
+        vertical-align: middle;
+
+    } */
+   .landing-text h1 {
+        font-size: 200%;
+    }
+
+    .landing-text h2 {font-size: 70%;
+    }
+        
     
-    h1 {
-        font-size: calc(1.525rem + 3.3vw);
-    }
 }
