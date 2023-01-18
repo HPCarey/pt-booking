@@ -387,10 +387,11 @@ Source: [stack overflow](https://)
 ## **Credits**
 I used the following resources to help me plan, build and fix bugs in my project.
 
-* [](https://www.youtube.com/watch?) : 
-This video was useful to 
+### Design and UI sources
+* [Set responsive background image using bootstrap](https://www.youtube.com/watch?v=aw2Zj7jXNcU&ab_channel=TechHub) : 
 
-* [](https://www.youtube.com/watch?) : 
+
+* [Responsive Background Images w/ Bootstrap 5 (in HTML/CSS)](https://www.youtube.com/watch?v=W87XNjvXiWw&ab_channel=DrewRyan) : 
 This video was also useful to 
 
 * [](https://www.youtube.com/watch?):

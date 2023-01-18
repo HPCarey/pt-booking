@@ -1,4 +1,6 @@
 body {
+    height: 100%;
+    width: 100%;
     background-color: #F9FAFC;
 }
 
@@ -7,49 +9,35 @@ body {
 
 /* landing page */
 
-.hero-outer {
-    height: 608px;
-    width: 100%;
-}
-
-.hero-image {
-    background: url(https://res.cloudinary.com/dg4yiogei/image/upload/v1673717784/hero-image-guy-big-resized_tj5y43.jpg) 26%;
-    height: 613px;
-    margin-top: -99px;
-    background-repeat: no-repeat;
+.bg-image {
+    background-image: url(https://res.cloudinary.com/dg4yiogei/image/upload/v1673717784/hero-image-guy-big-resized_tj5y43.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: table;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
 }
 
-#slogan {
-    margin-top: -459px !important;
-    margin-left: 107px;
-    color: #fff;
-
+.color-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.2);
 }
 
-#book-button-container {
-    position: absolute;
-    margin-top: 108px;
-    left: 115px;
-    width: 873px;
+.landing-text {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
 }
 
-#book-button {
-    font-size: 30px;
-    max-width: 204px;
+.landing-text h1 {
+    font-size: 500%;
+    font-weight: 700
 }
-
-.fa-ul {
-    /* class to align items in footer list */
-    margin-left: 2rem;
-}
-
-.full-width {
-    /* class to extend max-width in bootstrap containers */
-    max-width: 1400px;
-}
-
-
+    
 
 .btn-card:hover {
     box-shadow: rgba(103 42 46 / 12%) 0px 0px 8px 0px, rgb(103 42 46 / 24%) 0px 8px 8px 0px;
@@ -66,31 +54,19 @@ body {
     --bs-btn-active-border-color: #BC8180;
     border-radius: 1rem;
 }
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
-}
 
-.red-o {
-    color: #E84610;
-}
-
-.thin {
-    font-weight: 300;
-}
 
 .light-bg {
-    background-color: #fff;
+    background-color: #F9FAFC;
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #1C2023;
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #6E737A;
+    color: #fff;
 }
 
 
@@ -114,4 +90,15 @@ body {
 .link:active {
     color: #445261;
     text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .bg-image {
+        height: 50vh;
+    }
+    
+    h1 {
+        font-size: calc(1.525rem + 3.3vw);
+    }
 }
