@@ -9,29 +9,21 @@ import datetime
 
 # Create your models here.
 
+class BookAppointment(models.Model):
+    """
+    Model to store appointment details
+    """
 
-class Gender(models.Model):
-    """
-    Model for creating the gender dropdown list
-    Source:https://docs.djangoproject.com/en/4.1/ref/models/fields/#field-choices
-    """
     class GenderChoices(models.TextChoices):
         MALE = 'MA', _('Male')
         FEMALE = 'FE', _('Female')
         OTHER = 'OT', _('Other')
 
-    gender_choices = models.CharField(
-        max_length=2,
-        choices=GenderChoices.choices,
-        default=GenderChoices.MALE,
-    )
-
-
-class BookAppointment(models.Model):
-    """
-    Model to store appointment details
-    """
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='appointment')
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE, 
+        related_name='appointment'
+        )
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField()
@@ -44,9 +36,11 @@ class BookAppointment(models.Model):
             MaxValueValidator(90)
             ]
         )
-    gender = models.ForeignKey(
-        Gender, on_delete=models.CASCADE, related_name='appointment'
-        )
+    gender = models.CharField(
+        max_length=2,
+        choices=GenderChoices.choices,
+        default=GenderChoices.MALE,
+    )
     date_time = models.DateTimeField()
     goals = models.TextField(max_length=200, null=True)
     health_info = models.TextField(max_length=2000, null=True)
@@ -54,5 +48,11 @@ class BookAppointment(models.Model):
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField()
 
+    class Meta:
+        ordering = ['created_on']
+
     def __str__(self):
         return str(self.id)
+
+    def gender_choices(self):
+        return self.gender in {GenderChoices.MALE, GenderChoices.FEMALE, GenderChoices.OTHER}

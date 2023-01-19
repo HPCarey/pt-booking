@@ -324,9 +324,10 @@ The website is tested on the following browsers with no known issues:
 
 ### **Fixed Bugs**
 I have detailed some of the sources I used to fix bugs in the Credit section. Some of the main issues that were resolved were:
-1. 
+1. Gender model as a FK dropdown option inside booking model did not display or work as intended.
+    * Used enums method and put gender as a subclass inside booking model
 
-Source: [stack overflow](https://)
+Source: [Tuto Django](https://gdevops.gitlab.io/tuto_django/versions/3.0/enums/enums.html)
  
 
 2. There were...

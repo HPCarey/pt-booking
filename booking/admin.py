@@ -1,11 +1,6 @@
 from django.contrib import admin
-from .models import BookAppointment, Gender
+from .models import BookAppointment
 from django_summernote.admin import SummernoteModelAdmin
-
-
-@admin.register(Gender)
-class GenderAdmin(admin.ModelAdmin):
-    list_display = ['gender_choices']
 
 
 @admin.register(BookAppointment)

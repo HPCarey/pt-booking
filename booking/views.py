@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from django.views import View
-from .models import BookAppointment, Gender
+from .models import BookAppointment
 
 
 class LandingPageView(View):
