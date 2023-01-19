@@ -55,14 +55,26 @@
                     
                     {% endif %}
                 </ul>
-                
-                <span class="navbar-text text-muted">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     {% if user.is_authenticated %}
-                    <a class="nav-link" href="#">My Profile</a>
+                    <li class="nav-item dropdown me-4">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="far fa-user-circle fa-lg me-1"></i>My Profile
+                        </a>
+                        <ul class="dropdown-menu navbar-dropdown-color">
+                            <li>
+                                <a href="#" class="dropdown-item">Appoinments</a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
                     {% else %}
                     <a class="nav-link" href="{% url 'account_signup' %}">Register Account</a>
                     {% endif %}
-                </span>
             </div>
         </div>
     </nav>

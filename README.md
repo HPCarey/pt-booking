@@ -42,6 +42,8 @@ You can visit the live site [here]()
 #### **GitHub Project Board**
 ![Screenshot of project board](static/readme/project_board2.png)
 
+![Sprint 2](static/readme/project-board-sprint-2.png)
+
 [Back to top](#contents)
 
 ### **Wireframes**
@@ -391,10 +393,9 @@ I used the following resources to help me plan, build and fix bugs in my project
 * [Set responsive background image using bootstrap](https://www.youtube.com/watch?v=aw2Zj7jXNcU&ab_channel=TechHub) : 
 
 
-* [Responsive Background Images w/ Bootstrap 5 (in HTML/CSS)](https://www.youtube.com/watch?v=W87XNjvXiWw&ab_channel=DrewRyan) : 
-This video was also useful to 
+* [Responsive Background Images w/ Bootstrap 5 (in HTML/CSS)](https://www.youtube.com/watch?v=W87XNjvXiWw&ab_channel=ADesignerWhoCodes) 
 
-* [](https://www.youtube.com/watch?):
+* [Responsive Bootstrap Website Tutorial with Full Screen Landing Page](hhttps://www.youtube.com/watch?v=Zn64_IVLO88&ab_channel=DrewRyan):
 This video helped me to research project ideas and 
 
 * [](https://www.youtube.com/watch?):
