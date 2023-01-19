@@ -75,21 +75,20 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 
 #### **Images**
  
-* Images were taken from 
-    * [Pixabay](https://pixabay.com)
-    * [Unsplash](https://unsplash.com)
-    * [Pexels](https://www.pexels.com)
+* Hero Images were taken from 
+    * [Pexels](https://www.pexels.com/photo/man-working-out-2294361/)
 
 #### **Colour Scheme and Accessibility**
- The first step for creating the colour scheme was to uplaod the hero image to [colormind](http://colormind.io/image/) and generate a few different palettes and copy the hex values.
+ * First I uplaoded the hero image to [colormind](http://colormind.io/image/)to generate a few different palettes.
 
- The next step was to go to input these hex values into the contrast grid on [Eightshapes](https://contrast-grid.eightshapes.com/) to check the WCAG 2.0 minimum contrast scores which helped me to pick a background and foreground colour that meet the accessibility requirements for good UX.
+ * Input these hex values into the contrast grid on [Eightshapes](https://contrast-grid.eightshapes.com/) to check the WCAG 2.0 minimum contrast scores which helped me to pick a background and foreground colour that meet the accessibility requirements for good UX.
 
- ![Hero image](static/images/hero-image-girl%20-2.jpg)
 
- ![Colour Palette](docs/README-images/colour-palette.png)
+ ![Hero image](static/images/hero-image-guy.jpg)
 
- ![Colour Grid](docs/README-images/colour-grid.png)
+ ![Colour Palette](static/readme/colormind.png)
+
+ ![Colour Grid](static/readme/contrast_grid.png)
 
 
 [Back to top](#contents)
@@ -391,6 +390,8 @@ Source: [Tuto Django](https://gdevops.gitlab.io/tuto_django/versions/3.0/enums/e
 I used the following resources to help me plan, build and fix bugs in my project.
 
 ### Design and UI sources
+Hero Image
+* [Taken from Pexels from Li Sun](https://www.pexels.com/@823sl/)
 * [Set responsive background image using bootstrap](https://www.youtube.com/watch?v=aw2Zj7jXNcU&ab_channel=TechHub) : 
 
 
