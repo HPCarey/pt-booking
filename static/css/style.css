@@ -5,11 +5,20 @@ body {
     font-weight: 700;
 }
 
+.form-control:focus {
+    box-shadow: 0 0 5px rgba(110, 115, 122, 1) !important;
+  }
+
+  .btn {
+    box-shadow: 0 0 5px rgba(110, 115, 122, 1) !important;
+  }
+
 /* navbar */
 
 
 /* landing page */
 
+/* styles and positions the background and text overlay */
 .bg-image {
     background-image: url(https://res.cloudinary.com/dg4yiogei/image/upload/v1673717784/hero-image-guy-big-resized_tj5y43.jpg);
     background-size: cover;
@@ -44,13 +53,15 @@ body {
     font-size: 100%;
 }
 
-
+/* styles the color theme classes */
 .light-bg {
     background-color: #F9FAFC;
+    color: #1C2023;
 }
 
 .dark-bg {
     background-color: #1C2023;
+    color: #fff;
 }
 
 .main-bg {
@@ -58,6 +69,8 @@ body {
     color: #000;
 }
 
+/* controls */
+/* styles for the buttons and links */
 
 .btn-signup {
     background-color: #19192D;
@@ -67,18 +80,32 @@ body {
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
+    background-color:#6E737A;
+    color: #fff;
+    font-weight: 700;
+    border-color: #19192D;
+}
+
+.navbar-dark .btn-signup {
+    background-color: #6E737A;
+    color: #fff;
+}
+
+.navbar-dark .btn-signup:hover,
+.navbar-dark .btn-signup:active {
+    background-color: #B9C4CA;
     color: #19192D;
     font-weight: 700;
 }
+
+
 
 .link {
     color: #0653C7;
     text-decoration: none;
 }
 
-.link:hover,
-.link:active {
+.link:hover {
     color: #217AFF;
     text-decoration: underline;
 }
