@@ -55,26 +55,7 @@
                     
                     {% endif %}
                 </ul>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    {% if user.is_authenticated %}
-                    <li class="nav-item dropdown me-4">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="far fa-user-circle fa-lg me-1"></i>My Profile
-                        </a>
-                        <ul class="dropdown-menu navbar-dropdown-color">
-                            <li>
-                                <a href="#" class="dropdown-item">Appoinments</a>
-                            </li>
-                            <li class="dropdown-divider"></li>
-                            <li>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            </li>
-                        </ul>
-                    </li>
-                    {% else %}
-                    <a class="nav-link" href="{% url 'account_signup' %}">Register Account</a>
-                    {% endif %}
+                
             </div>
         </div>
     </nav>
@@ -88,13 +69,16 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">Copyright 2023</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
+        <p class="m-0 text-center text-white">Follow us: <a class="socials" href="https://www.facebook.com/"target="_blank" rel="noopener"
+            aria-label="Visit our Facebook page (opens in a new tab)"><i class="fab fa-facebook-square ms-3"></i></a>
+            <a href="https://www.twitter.com/" class="socials" target="_blank" rel="noopener"
+            aria-label="Visit our Twitter page (opens in a new tab)"><i class="fab fa-twitter-square ms-3"></i></a>
+            <a href="https://www.instagram.com/" class="socials" target="_blank" rel="noopener"
+            aria-label="Visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram-square ms-3"></i></a>
+            <a href="https://www.youtube.com/" class="socials" target="_blank" rel="noopener"
+                    aria-label="Visit our YouTube page (opens in a new tab)"><i class="fab fa-youtube-square ms-3"></i></a></p>
     </footer>
 </body>
-
 
 
 </html>

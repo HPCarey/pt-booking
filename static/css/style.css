@@ -83,6 +83,16 @@ body {
     text-decoration: underline;
 }
 
+/* footer*/
+.socials {
+    color: #fff;
+}
+
+.socials:hover,
+.socials:active {
+    color: #6E737A;
+}
+
 
 @media (max-width: 768px) {
     .bg-image {
