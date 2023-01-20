@@ -30,7 +30,7 @@ class BookAppointment(models.Model):
     age = models.IntegerField(
         null=False,
         blank=False,
-        default=0,
+        default=18,
         validators=[
             MinValueValidator(18),
             MaxValueValidator(90)
