@@ -53,7 +53,12 @@ body {
     font-size: 100%;
 }
 
-/* styles the color theme classes */
+/* User Profile*/
+.card-text {
+    color: #fff;
+}
+
+/* background color themes */
 .light-bg {
     background-color: #F9FAFC;
     color: #1C2023;
@@ -98,6 +103,19 @@ body {
     font-weight: 700;
 }
 
+ .btn-secondary {
+    outline: 0 0 5px rgba(110, 115, 122, 1) !important;
+    box-shadow: 0 0 5px rgba(110, 115, 122, 1);
+    background-color: #6E737A;
+    color: #fff;
+    
+}
+
+.btn-secondary:hover,
+.btn-secondary:active {
+    background-color: #B9C4CA;
+    color: #19192D;
+}
 
 
 .link {

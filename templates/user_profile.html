@@ -20,9 +20,9 @@
             <p class="card-text">date: {{  booking.date }}</p>
             <p class="card-text">time: {{ booking.time }}</p>
             <!-- select and edit appointment via use of primary key -->
-            <a href="#" class="btn btn-primary">Change</a>
+            <a href="#" class="btn btn-secondary">Change</a>
             <!-- select and delete reservation via use of primary key -->
-            <a href="#" class="btn btn-primary">Cancel</a>
+            <a href="#" class="btn btn-secondary">Cancel</a>
           </div>
         </div>
         {%  endfor %}
@@ -31,7 +31,7 @@
         <div class="card text-center res-details">
           <div class="card-body">
             <h2 class="card-title p-4"> You have no upcoming appointments</h2>
-            <a href="{% url 'reservation' %}" class="btn btn-primary">Book an appointment</a>
+            <a href="{% url 'reservation' %}" class="btn btn-secondary">Book an appointment</a>
           </div>
         </div>
         {% endif %}
