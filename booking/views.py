@@ -1,30 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect, Http404
+from django.shortcuts import redirect
 from django.views import generic
 from django.views import View
+from django.contrib.auth.decorators import login_required
 from .models import BookAppointment
+from .forms import AddBooking
 
 
-class LandingPageView(View):
-    model = BookAppointment
-    template_name = 'index.html'
-    
-    def get(self, request):
-        return render(request, "index.html")
+def index(request):
+    return render(request, "index.html")
 
 
-
-
-# class UserBookingView(generic.FormView):
-#     model = BookAppointment
-#     form_class = BookingForm
-#     template_name = 'create_booking_form.html'
-
-
-# class UserProfileView(View):
-#     model = BookAppointment
-#     template_name = 'user_profile.html'
-
-
-# class ChangeBookingView(generic.FormView):
-#     model = BookAppointment
-#     template_name = 'change_boooking_form.html'
+@login_required
+def add_booking(request):
+    if request.method == 'POST':
+        booking = BookAppointment(user=request.user)
+        form = AddBooking(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = AddBooking()
+    return render(request, 'add_booking.html', {'form': form})

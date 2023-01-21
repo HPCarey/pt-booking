@@ -3,11 +3,11 @@ from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 from django.db.models import IntegerField
 from django.core.validators import MinValueValidator, MaxValueValidator
-from cloudinary.models import CloudinaryField
 import datetime
 
 
 # Create your models here.
+
 
 class BookAppointment(models.Model):
     """
@@ -41,12 +41,13 @@ class BookAppointment(models.Model):
         choices=GenderChoices.choices,
         default=GenderChoices.MALE,
     )
-    date_time = models.DateTimeField()
+    date = models.DateField(null=True)
+    time = models.TimeField(null=True)
     goals = models.TextField(max_length=200, null=True)
     health_info = models.TextField(max_length=2000, null=True)
     approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now=True)
-    updated_on = models.DateTimeField()
+    created_on = models.DateTimeField(auto_now_add=True, blank=True)
+    updated_on = models.DateTimeField(auto_now=True, blank=True)
 
     class Meta:
         ordering = ['created_on']

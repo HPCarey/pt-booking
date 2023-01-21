@@ -3,5 +3,6 @@ from django.urls import path
 
 
 urlpatterns = [
-    path('', views.LandingPageView.as_view(), name='home'),
+    path('', views.index, name='home'),
+    path('add_booking/', views.add_booking, name='add_booking')
 ]

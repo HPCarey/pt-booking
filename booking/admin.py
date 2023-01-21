@@ -6,9 +6,9 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(BookAppointment)
 class AppointmentAdmin(SummernoteModelAdmin):
 
-    list_display = ('first_name', 'last_name', 'date_time')
+    list_display = ('first_name', 'last_name', 'date', 'time', 'created_on', 'updated_on')
     search_fields = ['first_name', 'last_name', 'email']
-    list_filter = ('first_name', 'last_name', 'email', 'date_time', 'created_on', 'updated_on')
+    list_filter = ('first_name', 'last_name', 'email', 'date')
     summernote_fields = ('goals', 'health_info')
     actions = ['approve_bookings']
 
