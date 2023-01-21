@@ -23,3 +23,13 @@ def add_booking(request):
     else:
         form = AddBooking()
     return render(request, 'add_booking.html', {'form': form})
+
+
+@login_required
+def user_profile(request):
+    user = request.user
+    bookings = BookAppointment.objects.filter(user=user)
+    return render(request, 'user_profile.html', {
+        'user': user,
+        'bookings': bookings,
+    })

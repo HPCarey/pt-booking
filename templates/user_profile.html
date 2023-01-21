@@ -1,4 +1,42 @@
 {% extends 'base.html' %} {% block content %}
 
-User profile
+<!--  -->
+<section class="container-fluid text-center res-details">
+    <div class="row">
+      <div class="col-12">
+        <h1>My Appointments</h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col d-flex justify-content-center flex-wrap">
+        {% if bookings %}
+        {% for booking in bookings %}
+        <!-- for each reservation in list of users confirmed reservations print this card with the users details -->
+        <div class="card m-2 col-m-2 bg-dark" style="width: 12em;">
+          <div class="card-body">
+  
+            <p class="card-text">username: {{ booking.user }}</p>
+            <p class="card-text">date: {{  booking.date }}</p>
+            <p class="card-text">time: {{ booking.time }}</p>
+            <!-- select and edit appointment via use of primary key -->
+            <a href="#" class="btn btn-primary">Change</a>
+            <!-- select and delete reservation via use of primary key -->
+            <a href="#" class="btn btn-primary">Cancel</a>
+          </div>
+        </div>
+        {%  endfor %}
+        {% else %}
+        <!-- if there are no reservations give the user an option to make a reservation -->
+        <div class="card text-center res-details">
+          <div class="card-body">
+            <h2 class="card-title p-4"> You have no upcoming appointments</h2>
+            <a href="{% url 'reservation' %}" class="btn btn-primary">Book an appointment</a>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  
 {% endblock content %}
