@@ -13,3 +13,12 @@ class AddBooking(forms.ModelForm):
                   'time',
                   'goals',
                   'health_info',)
+
+
+class UpdateBooking(forms.ModelForm):
+    class Meta:
+        model = BookAppointment
+        fields = ('date',
+                  'time',
+                  'goals',
+                  'health_info',)

@@ -5,7 +5,7 @@ from django.views import generic
 from django.views import View
 from django.contrib.auth.decorators import login_required
 from .models import BookAppointment
-from .forms import AddBooking
+from .forms import AddBooking, UpdateBooking
 
 
 def index(request):
@@ -19,7 +19,7 @@ def add_booking(request):
         form = AddBooking(request.POST, instance=booking)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('user_profile')
     else:
         form = AddBooking()
     return render(request, 'add_booking.html', {'form': form})
@@ -33,3 +33,27 @@ def user_profile(request):
         'user': user,
         'bookings': bookings,
     })
+
+
+@login_required
+def update_booking(request, id):
+    if request.method == 'POST':
+        booking = get_object_or_404(BookAppointment, pk=id, user=request.user)
+        form = UpdateBooking(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('user_profile')
+    else:
+        form = UpdateBooking()
+    context = {
+        'form': form,
+    }
+    return render(request, 'update_booking.html', context)
+
+
+
+
+   # booking = get_object_or_404(BookAppointment, pk=id, user=request.user)
+    # if request.method == 'GET':
+    #     context = {'form': AddBooking(instance=booking), 'id': id}
+    #     return render(request, 'add_form', context)

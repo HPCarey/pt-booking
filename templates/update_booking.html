@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+
+{% load crispy_forms_tags %}
+
+
+<div class="row">
+    <div class="col-md-4 mx-auto">
+      <!-- Shows the form only is user is logged in -->
+      {% if user.is_authenticated %}
+      <h3>Book a Free Consultation!</h3>
+      <form method="post" style="margin-top: 1.3em;">
+        {{ form | crispy }}
+        {% csrf_token %}
+        <p class="text-muted"></p>
+        <button type="submit" class="btn btn-secondary btn-signup btn-lg">Submit</button>
+      </form>
+      {% else %}
+      <div class="card mx-auto" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Create Account or Login</h5>
+          <p class="card-text">To place a booking you need to have an account. Create an account or login to existing
+            acoount with the buttons below.</p>
+          <a href="{% url 'account_signup' %}" class="btn btn-primary">Signup</a>
+          <a href="{% url 'account_login' %}" class="btn btn-primary">Login</a>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock content %}
