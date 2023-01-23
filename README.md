@@ -411,16 +411,17 @@ This tutorial for setting up email with Django using Gmail.
 The following article helped me create the dropdown menu for the gender option in the appoinments model.
 * [Stack Overflow](https://stackoverflow.com/questions/31130706/dropdown-in-django-model)
 
+This tutorial helped with creating a template view for delete confirmation.
+* [openclassrooms](https://openclassrooms.com/en/courses/6967196-create-a-web-application-with-django/7349788-delete-objects-safely-with-user-confirmation)
+Sources used for the datetime picker UI
+* [Stack Overflow](https://stackoverflow.com/questions/55404397/how-to-use-timeinput-widget-in-django-forms)
+* [Stack Overflow](https://stackoverflow.com/questions/51022722/how-to-restrict-date-and-time-in-django-bootstrap-datetimepicker-plus)
 
-* [w3schools](https://www.w3schools.com)
+
 
 * []()
 
-
-
-* []()
-
-* []()
+* [w3schools]()
 
 * [Free Code Camp: How to Write Good Commit Messages: A Practical Git Guide](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
 
