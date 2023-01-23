@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block content %}
+
+<!--  -->
+<section class="container-fluid text-center res-details">
+    <div class="row">
+      <div class="col-12">
+        <h1>Cancel Appointment</h1>
+        <hr>
+        <p>Are you sure you want to cancel this appointment? {{ user.username }} {{ booking.date }} {{ booking.time }}
+        </p>
+      </div>
+    </div>
+   
+    <form action="" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Delete">
+    </form>
+  </section>
+  
+{% endblock content %}
+<!-- 
+<div class="row">
+  <div class="col d-flex justify-content-center flex-wrap">
+    {% for book in booking %}
+    displays appointment date and time details
+    <div class="card m-2 col-m-2 bg-dark" style="width: 12em;">
+      <div class="card-body">
+
+        <p class="card-text">username: {{ booking.user }}</p>
+        <p class="card-text">date: {{  booking.date }}</p>
+        <p class="card-text">time: {{ booking.time }}</p>
+      </div>
+    </div>
+    {%  endfor %}
+  </div>
+</div> -->

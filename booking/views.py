@@ -54,10 +54,14 @@ def update_booking(request, id):
 @login_required
 def delete_booking(request, id):
     booking = get_object_or_404(BookAppointment, pk=id, user=request.user)
-    booking.delete()
-    return redirect('user_profile')
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('user_profile')
+    return render(request, 'delete_booking.html', {
+        'booking': booking,
+    })
 
    # booking = get_object_or_404(BookAppointment, pk=id, user=request.user)
     # if request.method == 'GET':
     #     context = {'form': AddBooking(instance=booking), 'id': id}
-    #     return render(request, 'add_form', context)
+    #     return render(request, 'add_form', context)re
