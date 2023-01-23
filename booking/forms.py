@@ -43,3 +43,14 @@ class UpdateBooking(forms.ModelForm):
                   'time',
                   'goals',
                   'health_info',)
+        widgets = {
+            'date': forms.DateInput(
+                format=('%Y-%m-%d'),
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Select a date',
+                    'type': 'date'
+                    }
+            ),
+            'time': forms.TimeInput(attrs={'type': 'time'}),
+        }

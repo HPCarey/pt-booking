@@ -15,14 +15,12 @@ def index(request):
 @login_required
 def add_booking(request):
     if request.method == 'POST':
-        booking = BookAppointment(user=request.user)
-        form = AddBooking(request.POST, instance=booking)
         if form.is_valid():
             form.save()
             return redirect('user_profile')
-    else:
-        form = AddBooking()
-    return render(request, 'add_booking.html', {'form': form})
+        else:
+            form = AddBooking()
+        return render(request, 'add_booking.html', {'form': form})
 
 
 @login_required

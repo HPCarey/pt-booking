@@ -16,9 +16,8 @@
         <div class="card m-2 col-m-2 bg-dark" style="width: 12em;">
           <div class="card-body">
   
-            <p class="card-text">username: {{ booking.user }}</p>
-            <p class="card-text">date: {{  booking.date }}</p>
-            <p class="card-text">time: {{ booking.time }}</p>
+            <p class="card-text"> {{  booking.date }}</p>
+            <p class="card-text"> {{ booking.time }}</p>
             <!-- select and edit appointment via use of primary key -->
             <a href="/update_booking/{{ booking.id }}" class="btn btn-secondary">Change</a>
             <!-- select and delete reservation via use of primary key -->
