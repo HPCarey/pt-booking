@@ -18,9 +18,9 @@ def add_booking(request):
         if form.is_valid():
             form.save()
             return redirect('user_profile')
-        else:
-            form = AddBooking()
-        return render(request, 'add_booking.html', {'form': form})
+    else:
+        form = AddBooking()
+    return render(request, 'add_booking.html', {'form': form})
 
 
 @login_required
