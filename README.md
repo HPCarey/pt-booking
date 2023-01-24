@@ -1,7 +1,7 @@
 # Motivate Fitness
 This is an appoinment booking application for an online personal training service.
 
-You can visit the live site [here]()
+You can visit the live site [here](https://pt-booking.herokuapp.com/)
 
 ![Am I Responsive](readme/amiresponsive.png)
 
