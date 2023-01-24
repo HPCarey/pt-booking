@@ -320,7 +320,7 @@ The following libraries are used in the project and are located in the requireme
 6. Add, commit and push all changes to github before starting steps to deploy to Heroku
 
 #### **Heroku**
-1. Log in to [Heroku](https://id.heroku.com).
+1. Log in to [Heroku](https://pt-booking.herokuapp.com).
 2. From the dashboard, click the button labelled New in the top right corner and from the drop-down menu select Create New App.
 3. Enter a name for the app and select your region.
 4. Click Create App.                  
