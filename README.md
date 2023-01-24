@@ -20,31 +20,31 @@ You can visit the live site [here]()
     - [Technologies Used](#technologies-used)
     - [Libraries](#libraries)
 - [Testing](#testing)
-    - [Automated Testing](#automated-testing)
     - [Validator Testing](#validator-testing)
     - [Lighthouse Testing](#lighthouse-testing)
-    - [Browser Testing](#browser-testing)
-    - [User Stories Testing](#user-stories-testing)
     - [Manual Testing](#manual-testing)
 - [Bugs](#bugs)
-    - [Fixed](#fixed-bugs)
-    - [Unfixed](#unfixed-bugs)
 - [Deployment](#deployment)
 - [Credits](#credits)
 - [Acknowledgements](#acknowledgements)
 
-
-## **User Experience**
-### **User Stories**
-#### **Site User**
-[Back to top](#contents)
 ### **Agile Methodology**
 #### **GitHub Project Board**
+
+* This project was made using agile methodologies. Epics, user stories, bugs and issues are recorded on the [Project Board](https://github.com/users/HPCarey/projects/4/views/1)
+
 ![Screenshot of project board](static/readme/project_board2.png)
 
 ![Sprint 2](static/readme/project-board-sprint-2.png)
 
 [Back to top](#contents)
+
+## **User Experience**
+### **User Stories**
+* Epics, site user stories and admin user stories can be seen on the [project board](https://github.com/users/HPCarey/projects/4/views/1)
+
+[Back to top](#contents)
+
 
 ### **Wireframes**
 Wireframes were created using Balsamiq.
@@ -63,9 +63,9 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 ### **Database**
 [Lucid chart](https://www.lucidchart.com/pages/) was used to make the entity relationship diagram showing my custom models and the user model which is built with Django AllAuth. Lucid chart was also used to make the flow chart mapping out the user journey throuh the site. 
 
-![Flow Chart](static/readme/flow_chart.png)
+![Flow Chart](static/readme/flow_chart_final.png)
 
-![Database](static/readme/entity_relationship_diagram%20.png)
+![Database](static/readme/entity_relationship_diagram_final.png)
 
 [Back to top](#contents)
 ### **Design**
@@ -84,7 +84,7 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
  * Input these hex values into the contrast grid on [Eightshapes](https://contrast-grid.eightshapes.com/) to check the WCAG 2.0 minimum contrast scores which helped me to pick a background and foreground colour that meet the accessibility requirements for good UX.
 
 
- ![Hero image](static/images/hero-image-guy.jpg)
+ ![Hero image](static/images/hero-image-guy-2.jpg)
 
  ![Colour Palette](static/readme/colormind.png)
 
@@ -94,11 +94,16 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 [Back to top](#contents)
 ## **Features**
 ### **Existing Features**
+### **logo**
+* Logo provided by site owner for his business
+![logo](static/images/logo_original.jpeg)
 #### **Navigation Bar**
 * The navigation bar is featured on all pages of the site. 
-* 
-* 
-* 
+* The Login link changes to Logout depending on user authorisation.
+* The account link takes you to the login page.
+* When user is logged in, the account link becomes a my profile dropdown menu giving logged in users access to their booking information via the user profile page and a logout link. 
+* The logo acts as a home link as well as the home-nav link.
+* The nav bar is fully responsive using bootstrap and becomes collapsable for mobile and tablet.
 
 ![Navbar desktop]()
 
@@ -111,16 +116,15 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 [Back to top](#contents)
 
 #### **Landing page**
-* The landing page features the hero image of ...
+* The landing page features the hero image.
 * There is also a text overlay on the hero image with a call to action "Book Now!" button, as well as a short description of what's on offer.
-* There is also a text overlay featuring a 3 part motivational message in the imperative.
+* The book now button takes authorised user's to the booking form, but unauthorised user's are directed to the login form.
 
 ![landing](static/images/readme_images/)
 
 #### **Footer**
-* The footer contains links to the business's social media profiles as well as contact and copyright information.
-* 
-* 
+* The footer contains links social media as well as copyright information.
+
 
 ![Footer](static/images/readme_images/footer.jpg)
 
@@ -128,13 +132,15 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 #### **Login Page**
 * The login page was built using Django AllAuth. 
 * I imported the template and gave it some basic styling using bootstrap. I also extended my base template so the user stays on the page when logging in and changed the text.
+* The login page contains a link to the sign-up page so new users can register their accounts.
 
 ![Login](static/images/readme_images/login.jpg)
 
 [Back to top](#contents)
 #### **Sign Up Page**
 * The sign up page is also from the authentication module allauth. 
-* I imported the template and gave it some basic styling using bootstrap. I also extended my base template so the user stays on the page when logging in.
+* I imported the template and gave it some basic styling using bootstrap.
+* Once signed up the user is redirected to the home page.
 
 ![Sign up](static/images/readme_images/sign_up.jpg)
 
@@ -149,33 +155,29 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 
 ![Place booking](static/images/readme_images/)
 
-* For the timepicker I used a plugin called [jQuery Timepicker](https://timepicker.co/). 
-
-![Timepicker](static/images/readme_images/)
 
 [Back to top](#contents)
 
 #### **User Profile**
 * A page where the user can view their upcoming appointments with the trainer.
-* This is also the page where the user can change or cancel their appointments. 
-* Bookings can only be canceledor changed more than 24 hours in advance of the appointment time.
-* Once the booking is approved...
-* The user profile also displays the user's personal information which can be edited using the edit button.
+* There is a cancel and change button for each appointment that takes the user to a new page to complete either of those actions. 
 
-![My Bookings](static/images/readme_images/)
-
-* When the user clicks "change" they are brought to a change appoinmtent form, which is the same as the booking form but with the user's appoinmtent details filled in.
 
 ![Edit Bookings](static/images/readme_images/)
 
-* When a user tries to cancel a booking, an alert is shown and the user needs to confirm the cancellation.
+* When the user clicks "change" they are brought to a change appoinmtent form, which shows the date
 
 ![Cancel Bookings](static/images/readme_images/)
+
+* When a user tries to cancel a booking, they are taken to a confirmation page first and aske dto press the cancle button to confirm delete.
+
+
 
 [Back to top](#contents)
 
 #### **Admin**
-* The trainer you can view, edit and delete all bookings via the admin panel.
+* The trainer/admin can view, edit and delete all bookings via the admin panel.
+* They can view relevant information regarding the clients gender, health conditions and goals so that they can prepare for the pt session.
 * They can  also add appointments in the case that an appointment is made over the phone or via social media messaging apps. 
 * The trainer also has the ability to confirm a booking.
 
@@ -186,6 +188,7 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 
 ### **Future Features**
 * For now the client only wants a simple promotional site with a call to action in order to attract potential clients, but in the future as their online clientele grows, the site could feature a services/programmes section which could detail various packages, services and price points.
+* A personal information section in the profile UI that clients can update and edit in order to communicate there need and changing circumstances with trainers. 
 * An onsite payment system using stripe so that the trainer can take payments upfront for consultations, programmes and online one-to-one training sessions.
 * A UI for the trainer which would allow them to manage bookings without having to go through the django admin panel.
 * Email confirmation of confirmed appointments and for the registration process.
@@ -237,10 +240,6 @@ The following libraries are used in the project and are located in the requireme
 [Back to top](#contents)
 ## **Testing**
 
-### **Automated Testing**
-
-[Back to top](#contents)
-
 ### **Validator Testing**
 
 1. HTML
@@ -258,17 +257,6 @@ The following libraries are used in the project and are located in the requireme
 * No bugs were found in the CSS at the final tetsing stage as I had been testing throughout development and CSS bugs were common and obvious in the gitpod browser so were quickly identified and fixed.
 
 ![CSS](static/images/readme_images/)
-
-3. Javascript
-* Javascript validation was done using [JSHint Validator](https://jshint.com/).
-* Upon testing there were not that many errors as I had been using JSHint throughout to check for and fix bugs. The initial results showed:
-    * Warning: A...
-    * One unused variable: selectedButton. I saw that I redeclared selectedButton inside whatever function it was in so there was no need to declare it at the top with a null value.
-* Some common errors that came up throughout the project in JSHint were 
-* I also used console log and the error messages that would display in the console in chrome devtools to resolve bugs along the way.   
-
-#### JavaScript Validation
-![JS](static/images/readme_images/)
 
 4. Python 
 
@@ -293,14 +281,6 @@ The following libraries are used in the project and are located in the requireme
 #### Lighthouse mobile final results
 ![Lighthouse mobile final results](static/images/readme_images/)
 
-[Back to top](#contents)
-
-### **Browser Testing**
-The website is tested on the following browsers with no known issues:
-- Mozilla Firefox
-- Google Chrome (desktop and mobile version)
-- Microsoft Edge
-- Safari for iOS
 
 [Back to top](#contents)
 ### **User Stories Testing**
@@ -321,37 +301,9 @@ The website is tested on the following browsers with no known issues:
 
 ## **Bugs**
 
-### **Fixed Bugs**
-I have detailed some of the sources I used to fix bugs in the Credit section. Some of the main issues that were resolved were:
-1. Gender model as a FK dropdown option inside booking model did not display or work as intended.
-    * Used enums method and put gender as a subclass inside booking model
+* I have recorede details of bugs and solutions in the project boars user stories:
+[Project Board](https://github.com/users/HPCarey/projects/4/views/1)
 
-Source: [Tuto Django](https://gdevops.gitlab.io/tuto_django/versions/3.0/enums/enums.html)
- 
-
-2. There were...
-    * By ... 
-    * Once I ... 
-
-3. Another bug that occured was...
-    * I ...
-
-4. I had wanted to ..
-    * I...
-
-5. An error message displayed 
-    * I ...
-    * I ...
-    * I...
-    * Finally ...
-
-    [Back to top](#contents)
-
-### **Unfixed Bugs**
-1. 
-
-    * In the end, 
-2. The code 
 
 [Back to top](#contents)
 ## **Deployment**
@@ -399,34 +351,41 @@ Hero Image
 
 * [Responsive Bootstrap Website Tutorial with Full Screen Landing Page](hhttps://www.youtube.com/watch?v=Zn64_IVLO88&ab_channel=DrewRyan):
 This video helped me to research project ideas and 
-
-* [](https://www.youtube.com/watch?):
-The approach in this video 
-
-* [](https://dev.to/abderrahmanemustapha/how-to-send-email-with-django-and-gmail-in-production-the-right-way-24ab):
+:
 This tutorial for setting up email with Django using Gmail.
-### Websites:
 
-### Articles:
-The following article helped me create the dropdown menu for the gender option in the appoinments model.
+### Code Credits and Sources:
+1. This project was created using the guidelines from the Hello Django and I think therefore I blog walkthrough projects and the django blog start files from Code Institute.
+
+* [Starter Files](https://github.com/Code-Institute-Solutions/django-blog-starter-files)
+
+2. The following tutorial was used as inspiration to plan my project.
+
+* [Django Tutorial](https://blog.devgenius.io/django-tutorial-on-how-to-create-a-booking-system-for-a-health-clinic-9b1920fc2b78)
+
+3. The following article helped me create the dropdown menu for the gender option in the appoinments model.
 * [Stack Overflow](https://stackoverflow.com/questions/31130706/dropdown-in-django-model)
 
-This tutorial helped with creating a template view for delete confirmation.
+4. This tutorial helped with creating a template view for delete confirmation.
 * [openclassrooms](https://openclassrooms.com/en/courses/6967196-create-a-web-application-with-django/7349788-delete-objects-safely-with-user-confirmation)
-Sources used for the datetime picker UI
+
+5. Sources used for the datetime picker UI
 * [Stack Overflow](https://stackoverflow.com/questions/55404397/how-to-use-timeinput-widget-in-django-forms)
 * [Stack Overflow](https://stackoverflow.com/questions/51022722/how-to-restrict-date-and-time-in-django-bootstrap-datetimepicker-plus)
 
+### Code Institute project sources:
+I'd also like to mention some of the projects of my fellow CI studens which helped me plan and execute parts of my project
+* [NailsbyFaar](https://github.com/DOdrums/PortfolioProjectFour/tree/main/salon) by [Dirk Ornee](https://github.com/DOdrums)
+
+* [Locksmith Booking](https://github.com/spangen87/locksmith-booking) by [spangen87](https://github.com/spangen87)
+* [Sandra's Kitchen](https://github.com/devisis/sandras-kitchen) by [DevIsis](https://github.com/devisis)
 
 
-* []()
-
-* [w3schools]()
-
-* [Free Code Camp: How to Write Good Commit Messages: A Practical Git Guide](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
 
 
 
 
 [Back to top](#contents)
 ## **Acknowledgements**
+
+To my mentor and everyone who offered advice and support on slack.
