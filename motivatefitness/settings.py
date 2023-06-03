@@ -33,7 +33,7 @@ DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['pt-booking.herokuapp.com', '8000-hpcarey-ptbooking-ohkkue0833z.ws-eu98.gitpod.io']
+ALLOWED_HOSTS = ['pt-booking.herokuapp.com', '8000-hpcarey-ptbooking-7xz7vh9p8ut.ws-eu98.gitpod.io']
 
 
 # Application definition
@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'crispy_forms',
+    'crispy_bootstrap5',
     'booking',
 ]
 
@@ -71,6 +72,7 @@ MESSAGE_TAGS = {
 
 }
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
