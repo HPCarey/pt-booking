@@ -12,8 +12,11 @@
       <form method="post" style="margin-top: 1.3em;">
         {{ form | crispy }}
         {% csrf_token %}
-        <p class="text-muted"></p>
-        <button type="submit" class="btn btn-primary btn-signup btn-lg">Submit</button>
+        <div class="d-flex justify-content-center">
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary btn-signup">Submit</button>
+            <a href="{% url 'user_profile' %}" class="btn btn-danger">Cancel</a>
+        </div>
       </form>
       {% else %}
       <div class="card mx-auto" style="width: 18rem;">

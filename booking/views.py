@@ -38,6 +38,7 @@ def user_profile(request):
 
 @login_required
 def update_booking(request, id):
+    booking = get_object_or_404(BookAppointment, pk=id, user=request.user)
     if request.method == 'POST':
         booking = get_object_or_404(BookAppointment, pk=id, user=request.user)
         form = UpdateBooking(request.POST, instance=booking)
@@ -45,7 +46,7 @@ def update_booking(request, id):
             form.save()
             return redirect('user_profile')
     else:
-        form = UpdateBooking()
+        form = UpdateBooking(instance=booking)  # Pass the instance to the form
     context = {
         'form': form,
     }
@@ -61,8 +62,3 @@ def delete_booking(request, id):
     return render(request, 'delete_booking.html', {
         'booking': booking,
     })
-
-   # booking = get_object_or_404(BookAppointment, pk=id, user=request.user)
-    # if request.method == 'GET':
-    #     context = {'form': AddBooking(instance=booking), 'id': id}
-    #     return render(request, 'add_form', context)re

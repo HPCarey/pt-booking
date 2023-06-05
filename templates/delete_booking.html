@@ -23,8 +23,8 @@
    
     <form action="" method="post">
       {% csrf_token %}
-      <input type="submit" value="Cancel" class="btn btn-danger">
-      <a href="{% url 'user_profile' %}" class="btn btn-success">Keep</a>
+      <input type="submit" value="Yes, cancel it" class="btn btn-danger">
+      <a href="{% url 'user_profile' %}" class="btn btn-success">No, keep it</a>
     </form>
   </section>
   

@@ -2,18 +2,21 @@
 
 {% load crispy_forms_tags %}
 
-
-
-<div class="row">
+<div class="container">
+  <div class="row">
     <div class="col-md-4 mx-auto">
-      <!-- Shows the form only is user is logged in -->
+      <!-- Shows the form only if user is logged in -->
       {% if user.is_authenticated %}
-      <h3>Book a Free Consultation!</h3>
+      <h3>Change your Appointment</h3>
       <form method="post" style="margin-top: 1.3em;">
         {{ form | crispy }}
         {% csrf_token %}
-        <p class="text-muted"></p>
-        <button type="submit" class="btn btn-primary btn-signup btn-lg">Submit</button>
+        <div class="d-flex justify-content-center">
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary btn-signup">Submit changes</button>
+            <a href="{% url 'user_profile' %}" class="btn btn-danger">Don't change</a>
+        </div>
+
       </form>
       {% else %}
       <div class="card mx-auto" style="width: 18rem;">
@@ -28,4 +31,5 @@
       {% endif %}
     </div>
   </div>
+</div>
 {% endblock content %}
