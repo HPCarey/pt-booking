@@ -13,8 +13,6 @@ body {
     box-shadow: 0 0 5px rgba(110, 115, 122, 1) !important;
   }
 
-/* navbar */
-
 
 /* landing page */
 
@@ -91,6 +89,8 @@ body {
     border-color: #19192D;
 }
 
+
+/* navbar */
 .navbar-dark .btn-signup {
     background-color: #6E737A;
     color: #fff;
