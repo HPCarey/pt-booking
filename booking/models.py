@@ -21,7 +21,7 @@ class BookAppointment(models.Model):
 
     user = models.ForeignKey(
         User,
-        on_delete=models.CASCADE, 
+        on_delete=models.CASCADE,
         related_name='appointment'
         )
     first_name = models.CharField(max_length=30)

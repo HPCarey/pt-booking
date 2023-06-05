@@ -19,11 +19,17 @@ def add_booking(request):
         booking = BookAppointment(user=request.user)
         form = AddBooking(request.POST, instance=booking)
         if form.is_valid():
-            form.save()
-            return redirect('user_profile')
+            if not BookAppointment.objects.filter(user=request.user, date=booking.date).exists():
+                form.save()
+                return redirect('user_profile')
+            else:
+                messages.error(request, 'Duplicate booking. Please choose a different date')
+        else:
+            messages.error(request, 'Invalid form data. Please check the entered values.')
     else:
         form = AddBooking()
     return render(request, 'add_booking.html', {'form': form})
+
 
 
 @login_required
@@ -40,18 +46,21 @@ def user_profile(request):
 def update_booking(request, id):
     booking = get_object_or_404(BookAppointment, pk=id, user=request.user)
     if request.method == 'POST':
-        booking = get_object_or_404(BookAppointment, pk=id, user=request.user)
         form = UpdateBooking(request.POST, instance=booking)
         if form.is_valid():
-            form.save()
-            return redirect('user_profile')
+            if not BookAppointment.objects.filter(user=request.user, date=booking.date).exclude(pk=id).exists():
+                form.save()
+                return redirect('user_profile')
+            else:
+                messages.error(request, 'Duplicate booking. Please choose a different date')
+        else:
+            messages.error(request, 'Invalid form data. Please check the entered values.')
     else:
-        form = UpdateBooking(instance=booking)  # Pass the instance to the form
+        form = UpdateBooking(instance=booking)
     context = {
         'form': form,
     }
     return render(request, 'update_booking.html', context)
-
 
 @login_required
 def delete_booking(request, id):

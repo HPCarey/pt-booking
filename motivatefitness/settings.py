@@ -33,7 +33,7 @@ DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['pt-booking.herokuapp.com', '8000-hpcarey-ptbooking-7xz7vh9p8ut.ws-eu98.gitpod.io']
+ALLOWED_HOSTS = ['pt-booking.herokuapp.com', '8080-hpcarey-ptbooking-7xz7vh9p8ut.ws-eu98.gitpod.io']
 
 
 # Application definition
