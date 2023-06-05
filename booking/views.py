@@ -64,6 +64,7 @@ def update_booking(request, id):
     }
     return render(request, 'update_booking.html', context)
 
+
 @login_required
 def delete_booking(request, id):
     booking = get_object_or_404(BookAppointment, pk=id, user=request.user)

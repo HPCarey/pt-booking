@@ -1,6 +1,8 @@
 from django import forms
 from django.forms import ModelForm
 from .models import BookAppointment
+from django.utils import timezone
+import datetime
 
 
 class DateInput(forms.DateInput):
@@ -30,10 +32,20 @@ class AddBooking(forms.ModelForm):
                     'class': 'form-control',
                     'placeholder': 'Select a date',
                     'type': 'date'
-                    }
+                }
             ),
             'time': forms.TimeInput(attrs={'type': 'time'}),
         }
+
+    def clean_date(self):
+        date = self.cleaned_data.get('date')
+
+        if date:
+            current_date = timezone.now().date()
+            if date < current_date:
+                raise forms.ValidationError("Cannot book a date in the past.")
+
+        return date
 
 
 class UpdateBooking(forms.ModelForm):
@@ -50,7 +62,17 @@ class UpdateBooking(forms.ModelForm):
                     'class': 'form-control',
                     'placeholder': 'Select a date',
                     'type': 'date'
-                    }
+                }
             ),
             'time': forms.TimeInput(attrs={'type': 'time'}),
         }
+
+    def clean_date(self):
+        date = self.cleaned_data.get('date')
+
+        if date:
+            current_date = timezone.now().date()
+            if date < current_date:
+                raise forms.ValidationError("Cannot book a date in the past.")
+
+        return date
