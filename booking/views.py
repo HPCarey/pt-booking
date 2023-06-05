@@ -13,6 +13,10 @@ def index(request):
     return render(request, "index.html")
 
 
+def error_404(request, exception):
+    return render(request, 'booking/404.html')
+
+
 @login_required
 def add_booking(request):
     if request.method == 'POST':
