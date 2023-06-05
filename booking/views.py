@@ -21,6 +21,7 @@ def add_booking(request):
         if form.is_valid():
             if not BookAppointment.objects.filter(user=request.user, date=booking.date).exists():
                 form.save()
+                messages.success(request, 'Booking added successfully.')
                 return redirect('user_profile')
             else:
                 messages.error(request, 'Duplicate booking. Please choose a different date')
@@ -50,6 +51,7 @@ def update_booking(request, id):
         if form.is_valid():
             if not BookAppointment.objects.filter(user=request.user, date=booking.date).exclude(pk=id).exists():
                 form.save()
+                messages.success(request, 'Booking updated successfully.')
                 return redirect('user_profile')
             else:
                 messages.error(request, 'Duplicate booking. Please choose a different date')
@@ -67,6 +69,7 @@ def delete_booking(request, id):
     booking = get_object_or_404(BookAppointment, pk=id, user=request.user)
     if request.method == 'POST':
         booking.delete()
+        messages.success(request, 'Booking deleted successfully.')
         return redirect('user_profile')
     return render(request, 'delete_booking.html', {
         'booking': booking,
