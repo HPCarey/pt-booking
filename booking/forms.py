@@ -6,6 +6,10 @@ import datetime
 
 
 class DateInput(forms.DateInput):
+    """
+    Class to make a calender showing when choosing the date.
+    See sources in README
+    """
     input_type = 'date'
 
 
@@ -14,6 +18,9 @@ class TimeInput(forms.TimeInput):
 
 
 class AddBooking(forms.ModelForm):
+    """
+    Creates the form to be rendered for add_booking view
+    """
     class Meta:
         model = BookAppointment
         fields = ('first_name',
@@ -38,6 +45,11 @@ class AddBooking(forms.ModelForm):
         }
 
     def clean_date(self):
+        """
+        Check if date user inputs is in the past
+        Raise an error if date is in the past
+        Otherwise, return the chosen date
+        """
         date = self.cleaned_data.get('date')
 
         if date:
@@ -68,6 +80,11 @@ class UpdateBooking(forms.ModelForm):
         }
 
     def clean_date(self):
+        """
+        Check if date user inputs is in the past
+        Raise an error if date is in the past
+        Otherwise, return the chosen date
+        """
         date = self.cleaned_data.get('date')
 
         if date:

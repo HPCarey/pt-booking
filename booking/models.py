@@ -6,9 +6,6 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 import datetime
 
 
-# Create your models here.
-
-
 class BookAppointment(models.Model):
     """
     Model to store appointment details
@@ -23,7 +20,7 @@ class BookAppointment(models.Model):
         User,
         on_delete=models.CASCADE,
         related_name='appointment'
-        )
+    )
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField()
@@ -34,8 +31,8 @@ class BookAppointment(models.Model):
         validators=[
             MinValueValidator(18),
             MaxValueValidator(90)
-            ]
-        )
+        ]
+    )
     gender = models.CharField(
         max_length=2,
         choices=GenderChoices.choices,
@@ -56,4 +53,8 @@ class BookAppointment(models.Model):
         return str(self.id)
 
     def gender_choices(self):
-        return self.gender in {GenderChoices.MALE, GenderChoices.FEMALE, GenderChoices.OTHER}
+        return self.gender in {
+            GenderChoices.MALE,
+            GenderChoices.FEMALE,
+            GenderChoices.OTHER
+        }

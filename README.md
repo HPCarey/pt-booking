@@ -244,7 +244,7 @@ The following libraries are used in the project and are located in the requireme
 
 ## **Bugs**
 
-* I have recorede details of bugs and solutions in the project boars user stories:
+* I have recorded details of bugs and solutions in the project boars user stories:
 [Project Board](https://github.com/users/HPCarey/projects/4/views/1)
 
 
@@ -254,29 +254,78 @@ The following libraries are used in the project and are located in the requireme
 ### Steps to deploy:
 
 #### **Gitpod**
-
-1. Create a repository in github using the [Code Institute template](https://github.com/Code-Institute-Org/python-essentials-template). 
+This project was created using the Code Institute
+1. Create a repository in github using the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template). 
 2. Click Use this Template and add a repository name.
 3. Click Create Repository from template
-4. While using this template ensure all inputs have \n to ensure deployment to heroku.
-5. In terminal type pip3 freeze > requirements.txt press enter to update this file.
-6. Add, commit and push all changes to github before starting steps to deploy to Heroku
+4. Install Django and the rest of the libraries listed in the libraries section. 
+5. Freeze requirements using: pip3 freeze --local > requirements.txt
+6. Create the project:(django-admin startproject motivatefitness .  )
+    - Note the '.' at the end to ensure we don't need to cd into the app every time.
+7. Create the booking app: (python3 manage.py startapp booking)
+8. Add project to INSALLED_APPS
+9. Migrate changes and run server locally to check it's working
+
+#### **ElephantSQL**
+Before deploying to heroku, an external database was created to host the app data.
+1. Create an [ElephantSQL](https://www.elephantsql.com/) account. Code Institute provides the steps to do that [here](https://code-institute-students.github.io/deployment-docs/02-elephantsql/elephantsql-01-sign-up).
+2. Click the green "Create New Instance" button.
+3. Set your plan to Tiny Turtle (Free) and give it a name.
+4. Select a data centre near you and click review.
+5. Check the details are correct and click create instance.
+6. Return to the ElephantSQL dashboard and select the newly created database instance.
+7. Copy the database URL using the copy icon. 
+8. Add this database url to your env file.
+9. Later you will also add this url to your Heroku Config Vars.
+
+#### **Environemental variables and settings.py**
+1. Create the env.py file in the top level directory.
+2. Import os library and set the database url and a secret key variables.
+        - The database is your ElephantSQL URL
+        - The secret key you can make up or use a [generator](https://djecrety.ir/)
+3. In settings.py, point to the env.py for the local server:
+
+    ![](static/readme/deployment/import_env.JPG)
+4. Remove the automtic django secret key and get it from the env.py.
+![](static/readme/deployment/hide_secret.JPG)
+5. Comment out the old DataBase section and replace it with the one below.
+![](static/readme/deployment/db_url.JPG)
+6. Save all files and makemigrations.
+7. Set up Cloudinary to store the static and media files.
+8. Add cloudinary url to env.py file.
+9. Add 'cloudinary_storage', to INSTALLED_APPS, in settings.py, above 'django.contrib.staticfiles',.
+10. Then add'cloudinary', underneath  'django.contrib.staticfiles',.
+11. In settings.py, under the Static files, add the code to tell Django to use cloudinary to store media and static files. 
+    ![](static/readme/deployment/static_instructions.JPG)
+12. Link files to the templates directory in settings.py underneath the BASE_DIR. 
+![](static/readme/deployment/templates_dir.JPG)
+
+13. Change the templates directory to TEMPLATES_DIR. 
+![](static/readme/deployment/templates_dir_2.JPG)
+
+14. Add the heroku hostname (herokuappname.herokuapp.com)to ALLOWED_HOSTS along with localhosts. 
+    - I have added the specific local host url instead of 'localhost' because at some point, it stopped allowing this access to the local browser.
+    - If you want to use the app and localhost is not working, then replace it with you local browser url. 
+15. Create 3 new folders on the top level directory, named media, static and templates.
+16. Create a Procfile and add web: gunicorn PROJ_NAME.wsgi
+17. Check all migrations have been made, save and git add, commit and push.
+18. App is ready for initial deployment to heroku.  
+
 
 #### **Heroku**
-1. Log in to [Heroku](https://pt-booking.herokuapp.com).
+Initial deployment to heroku was done early with the intention of making the final deployment process more smooth.
+1. Log in to [Heroku](https://www.heroku.com/).
 2. From the dashboard, click the button labelled New in the top right corner and from the drop-down menu select Create New App.
 3. Enter a name for the app and select your region.
 4. Click Create App.                  
 5. Find the Settings Tab and scroll down to Config Vars.
-6. Click Reveal Config Vars and enter PORT into the Key box and 8000 into the Value box before clicking Add. 
-7. Scroll down to the Buildpack section click Add Buildpack.
-8. Select python and click Save Changes.
-9. Next select node.js and Save Changes. 
-10. Ensure python is the first buildpack listed and is above node.js.
-11. Scroll to the top of the page and navigate to the Deploy tab.
-12. Select Github as the deployment method.
-14. Search for the repository name and click the connect button.
-15. Scroll to the bottom of the deploy page and select Enable Automatic Deploys. 
+6. Click Reveal Config Vars.
+7. Enter the key-value pairs for DATABASE_URL, SECRET_KEY and CLOUDINARY_URL.
+7. As a temporary measure, set a key value of DISABLE_COLLECTSTATIC to 1, to be removed before final deployment.
+8. Navigate to the Deployment tab and choose Github as the deployment method.
+9. Search for the repo name and connect to the correct repository.
+10. Scroll down and deploy branch.
+11. Finally click the open app button once the build is finished.
 
 [Back to top](#contents)
 
@@ -292,10 +341,8 @@ Hero Image
 
 * [Responsive Background Images w/ Bootstrap 5 (in HTML/CSS)](https://www.youtube.com/watch?v=W87XNjvXiWw&ab_channel=ADesignerWhoCodes) 
 
-* [Responsive Bootstrap Website Tutorial with Full Screen Landing Page](hhttps://www.youtube.com/watch?v=Zn64_IVLO88&ab_channel=DrewRyan):
-This video helped me to research project ideas and 
-:
-This tutorial for setting up email with Django using Gmail.
+* [Responsive Bootstrap Website Tutorial with Full Screen Landing Page](https://www.youtube.com/watch?v=Zn64_IVLO88&ab_channel=DrewRyan):
+This video helped me to research project ideas
 
 ### Code Credits and Sources:
 1. This project was created using the guidelines from the Hello Django and I think therefore I blog walkthrough projects and the django blog start files from Code Institute.
