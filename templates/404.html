@@ -1,16 +1,22 @@
-{% extends "base.html" %}
-
+{% extends "base.html" %} 
 {% block content %}
 
 <!-- hero image -->
-<body>
-    <h1>Hmm.. Looks like you've gone off the beaten path. </h1>
-    <h3>Click on the image to head back to the home page.</h3>
-    <a href="index.html">
-        <img src="https://res.cloudinary.com/dg4yiogei/image/upload/v1673973090/logo_original_thumbnail_resized_kchhpi.jpg" alt="motivate-404">
-    </a>
-</body>
-</section>
+<div class="container d-flex flex-column align-items-center">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <h2>Hmm.. Looks like you've wandered off the beaten path.</h2>
+      <br>
+      <p>Click on the image to head back to the home page.</p>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-4 text-center">
+      <a href="index.html">
+        <img src="https://res.cloudinary.com/dg4yiogei/image/upload/v1673973090/logo_original_thumbnail_resized_kchhpi.jpg" alt="motivate-404" class="img-fluid">
+      </a>
+    </div>
+  </div>
+</div>
 
-
-{%endblock%}
+{% endblock %}

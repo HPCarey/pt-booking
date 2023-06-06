@@ -4,7 +4,8 @@
 
 
 
-<div class="row">
+<div class="container">
+  <div class="row">
     <div class="col-md-4 mx-auto">
       <!-- Shows the form only is user is logged in -->
       {% if user.is_authenticated %}
@@ -31,4 +32,5 @@
       {% endif %}
     </div>
   </div>
+</div>
 {% endblock content %}
