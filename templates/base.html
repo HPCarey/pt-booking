@@ -61,15 +61,14 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a
-                class="nav-link active"
-                aria-current="page"
+                class="nav-link {% if request.path == '/' %}active{% endif %}"
                 href="{% url 'home' %}"
                 >Home</a
               >
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'add_booking' %}"
+              <a class="nav-link {% if request.path == '/add_booking/' %}active{% endif %}" href="{% url 'add_booking' %}"
                 >Book an Appointment</a
               >
             </li>
@@ -82,11 +81,11 @@
 
             {% endif %} {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+              <a class="nav-link {% if request.path == '/accounts/logout/' %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+              <a class="nav-link {% if request.path == '/accounts/login/' %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
             </li>
 
             {% endif %}
@@ -95,7 +94,7 @@
             {% if request.user.is_authenticated %}
             <li class="nav-item dropdown me-4">
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-link {% if request.path == '/user_profile/' %}active{% endif %} dropdown-toggle"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
