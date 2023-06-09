@@ -46,6 +46,19 @@ class AddBooking(forms.ModelForm):
             'time': forms.TimeInput(attrs={'type': 'time'}),
         }
 
+    def clean_age(self):
+        age = self.cleaned_data.get('age')
+
+        if age < 18:
+            raise forms.ValidationError("You must be at least 18 years old.")
+
+        if age > 90:
+            raise forms.ValidationError(
+                "You cannot be more than 90 years old."
+            )
+
+        return age
+
     def clean_date(self):
         """
         Check if date user inputs is in the past
