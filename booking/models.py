@@ -21,8 +21,8 @@ class BookAppointment(models.Model):
         on_delete=models.CASCADE,
         related_name='appointment'
     )
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=30, blank=False)
+    last_name = models.CharField(max_length=30, blank=False)
     email = models.EmailField()
     age = models.IntegerField(
         null=False,
@@ -38,10 +38,10 @@ class BookAppointment(models.Model):
         choices=GenderChoices.choices,
         default=GenderChoices.MALE,
     )
-    date = models.DateField(null=True)
-    time = models.TimeField(null=True)
-    goals = models.TextField(max_length=200, null=True)
-    health_info = models.TextField(max_length=2000, null=True)
+    date = models.DateField(null=True, blank=False)
+    time = models.TimeField(default=datetime.time(12, 00), blank=False)
+    goals = models.TextField(max_length=200, null=True, blank=False)
+    health_info = models.TextField(max_length=2000, null=True, blank=False)
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True, blank=True)
     updated_on = models.DateTimeField(auto_now=True, blank=True)
