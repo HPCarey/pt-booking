@@ -47,6 +47,10 @@ class AddBooking(forms.ModelForm):
         }
 
     def clean_age(self):
+        """
+        Check if age is less 18 or more than 90
+        Raise a custom error message if so
+        """
         age = self.cleaned_data.get('age')
 
         if age < 18:

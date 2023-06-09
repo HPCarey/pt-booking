@@ -1,41 +1,42 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 
-<!--  -->
 <section class="container-fluid text-center res-details">
-    <div class="row">
-      <div class="col-12">
-        <h1>My Appointments</h1>
-        <hr>
-      </div>
+  <div class="row">
+    <div class="col-12">
+      <h1>My Appointments</h1>
+      <hr>
     </div>
-    <div class="row">
-      <div class="col d-flex justify-content-center flex-wrap">
-        {% if bookings %}
-        {% for booking in bookings %}
-        <!-- for each reservation in list of users confirmed reservations print this card with the users details -->
-        <div class="card m-2 col-m-2 bg-dark" style="width: 12em;">
-          <div class="card-body">
-  
-            <p class="card-text"> {{  booking.date }}</p>
-            <p class="card-text"> {{ booking.time }}</p>
-            <!-- select and edit appointment via use of primary key -->
-            <a href="/update_booking/{{ booking.id }}" class="btn btn-secondary">Change</a>
-            <!-- select and delete reservation via use of primary key -->
+  </div>
+  <div class="row">
+    <div class="col d-flex justify-content-center flex-wrap">
+      {% if bookings %}
+      {% for booking in bookings %}
+      <!-- For each reservation in the list of user's confirmed reservations, display this card with the user's details -->
+      <div class="card m-2 col-m-2 bg-dark" style="width: 12em;">
+        <div class="card-body">
+          <p class="card-text">{{ booking.date }}</p>
+          <p class="card-text">{{ booking.time }}</p>
+          <!-- Select and edit appointment via the use of primary key -->
+          <div class="d-flex justify-content-between">
+            <a href="/update_booking/{{ booking.id }}" class="btn btn-secondary me-2">Change</a>
+            <!-- Select and delete reservation via the use of primary key -->
             <a href="/delete_booking/{{ booking.id }}" class="btn btn-secondary">Cancel</a>
           </div>
         </div>
-        {%  endfor %}
-        {% else %}
-        <!-- if there are no reservations give the user an option to make a reservation -->
-        <div class="card text-center res-details">
-          <div class="card-body">
-            <h2 class="card-title p-4"> You have no upcoming appointments</h2>
-            <a href="{% url 'add_booking' %}" class="btn btn-secondary">Book an appointment</a>
-          </div>
-        </div>
-        {% endif %}
       </div>
+      {% endfor %}
+      {% else %}
+      <!-- If there are no reservations, give the user an option to make a reservation -->
+      <div class="card text-center res-details">
+        <div class="card-body">
+          <h2 class="card-title p-4">You have no upcoming appointments</h2>
+          <a href="{% url 'add_booking' %}" class="btn btn-secondary">Book an appointment</a>
+        </div>
+      </div>
+      {% endif %}
     </div>
-  </section>
-  
+  </div>
+</section>
+
 {% endblock content %}
