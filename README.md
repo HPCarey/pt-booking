@@ -285,11 +285,11 @@ Before deploying to heroku, an external database was created to host the app dat
         - The secret key you can make up or use a [generator](https://djecrety.ir/)
 3. In settings.py, point to the env.py for the local server:
 
-    ![](static/readme/deployment/import_env.JPG)
+    ![settings](static/readme/deployment/import_env.JPG)
 4. Remove the automtic django secret key and get it from the env.py.
-![](static/readme/deployment/hide_secret.JPG)
+![secret](static/readme/deployment/hide_secret.JPG)
 5. Comment out the old DataBase section and replace it with the one below.
-![](static/readme/deployment/db_url.JPG)
+![database](static/readme/deployment/db_url.JPG)
 6. Save all files and makemigrations.
 7. Set up Cloudinary to store the static and media files.
 8. Add cloudinary url to env.py file.
@@ -298,10 +298,10 @@ Before deploying to heroku, an external database was created to host the app dat
 11. In settings.py, under the Static files, add the code to tell Django to use cloudinary to store media and static files. 
     ![](static/readme/deployment/static_instructions.JPG)
 12. Link files to the templates directory in settings.py underneath the BASE_DIR. 
-![](static/readme/deployment/templates_dir.JPG)
+![templates](static/readme/deployment/templates_dir.JPG)
 
 13. Change the templates directory to TEMPLATES_DIR. 
-![](static/readme/deployment/templates_dir_2.JPG)
+![templates2](static/readme/deployment/templates_dir_2.JPG)
 
 14. Add the heroku hostname (herokuappname.herokuapp.com)to ALLOWED_HOSTS along with localhosts. 
     - I have added the specific local host url instead of 'localhost' because at some point, it stopped allowing this access to the local browser.
@@ -311,7 +311,7 @@ Before deploying to heroku, an external database was created to host the app dat
 17. Check all migrations have been made, save and git add, commit and push.
 18. App is ready for initial deployment to heroku.  
 
-
+[Back to top](#contents)
 #### **Heroku**
 Initial deployment to heroku was done early with the intention of making the final deployment process more smooth.
 1. Log in to [Heroku](https://www.heroku.com/).
@@ -326,6 +326,13 @@ Initial deployment to heroku was done early with the intention of making the fin
 9. Search for the repo name and connect to the correct repository.
 10. Scroll down and deploy branch.
 11. Finally click the open app button once the build is finished.
+
+#### **Final Deployment**
+1. Set DEBUG to false.
+2. Underneath DEBUG, set a variable called X_FRAME_OPTIONS to 'SAMEORIGIN' to allow browser to user summernote editor.
+3. Save everything, git add, commit and push.
+4. Got to Heroku config vars and remove the DISABLE_COLLECSTATIC key value pair.
+5. Navigate to the deploy tab and follow the same steps as before to deploy.
 
 [Back to top](#contents)
 
