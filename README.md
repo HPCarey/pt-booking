@@ -3,7 +3,7 @@ This is an appoinment booking application for an online personal training servic
 
 You can visit the live site [here](https://pt-booking.herokuapp.com/)
 
-![Am I Responsive](readme/amiresponsive.png)
+![Am I Responsive](static/readme/amiresponsive.JPG)
 
 ## Contents
 - [User Experience](#user-experience)
@@ -236,9 +236,8 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 ### **Libraries**
 The following libraries are used in the project and are located in the requirements.txt file.
 
-
-[Back to top](#contents)
-
+## **Testing**
+The testing documentation can be viewed [here](/TESTING.md)
 
 [Back to top](#contents)
 
