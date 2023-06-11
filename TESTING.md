@@ -21,9 +21,9 @@ There are several screenshots of the features in the [README.md](README.md) file
 
 ### Epic 1: User Authorisation
 
-- - -
+
 <details>
-<summary></summary>
+<summary>User Stories test cases</summary>
 <br>
 
 #### **User Stories**
@@ -41,17 +41,28 @@ There are several screenshots of the features in the [README.md](README.md) file
 #
 2. As a **Site User** I can **I can register an account** so that **I can make a booking**
 
-    - All navlinks and buttons on the landing page will take logged out user to the sign in page.
-    - If user is new user, sign in page contains a link to the sign up page
-    - Sign up page allows new user to create an account and new user gets added to backend database
+    - All navlinks and buttons on the landing page, other than home and the logo, will take logged out user to the sign in page.
+    - Site authentication is handled by django AllAuth.
+    - If user is new user, sign in page contains a link to the sign up page.
+    - Sign up page allows new user to create an account and new user gets added to backend database.
+    - Sign up form field errors are handled by django AllAuth.
 
     ![desktop-sign-up](static/readme/testing/sign-up-form.JPG)
-    ![mobile-sign-up](static/readme/testing/mobile/mobile-sign-up.jpg)
+    ![mobile-sign-up](static/readme/testing/mobile/mobile_sig_up.jpg)
+
+    - Once a new user successfully signs up then:
+        1. User will be automatically signed in. 
+        2. they are redirected to the homepage.
+        3. A success message is displayed.
+
+    ![desktop-sign-up](static/readme/testing/sign-in-success.jpg)
+
 
 #
 
 3. As a **Site User** I can **login** so that **I can make an appointment and/or view my profile and scheduled appointments**.
     - All navlinks and buttons on the landing page will take logged out user to the sign in page.
+    - All signin form field errors are handled by django AllAuth.
 
     ![desktop-sign-in](static/readme/testing/sign-in-form.JPG) 
     ![mobile-sign-in](static/readme/testing/mobile/sign-in-mobile.jpg)
@@ -82,6 +93,18 @@ There are several screenshots of the features in the [README.md](README.md) file
 
     ![desktop-bookin-form](static/readme/testing/no_appointments.JPG)
 
+    - The Logout navlink will take users to a confirmation page
+
+    ![desktop-logout-confirm](static/readme/testing/sign-out-confirmation.JPG)
+    ![mobile-logout-confirm](static/readme/testing/mobile/sign-out-confirmation-mobile.jpg)
+
+    - If the user chooses to click the sign out button on the confirmation page then:
+        1. User will be logged out and lose access to other profile and form pages.
+        2. User will be redirected to the home page and see the logged out version of the navbar.
+        3. A success mesaage will confirm to the user that they have been logged out.
+
+    ![desktop-logout-confirm](static/readme/testing/sign_out_success.jpg)
+
 #
 
 5. As a **Site Admin** I can **create, read, update and delete bookings through the django admin panel** so that **I can manage my client bookings.** 
@@ -103,11 +126,13 @@ There are several screenshots of the features in the [README.md](README.md) file
 
 </details>
 
+- - -
+
 ### Epic 2: Add a Booking 
 
-- - -
+
 <details>
-<summary></summary>
+<summary>User Stories test cases</summary>
 <br>
 
 #### **User Stories**
@@ -120,7 +145,36 @@ There are several screenshots of the features in the [README.md](README.md) file
 
     ![desktop-form-buttons](static/readme/testing/add-booking-submit-buttons.jpg)
     ![mobile-form-buttons](static/readme/testing/mobile/submit-cancel-buttons-forms.jpg)
-            
+
+    - If some form fields are left blank or are invalid, the booking will not be saved.
+    - The form handles custom error messages for:
+        1. Duplicate bookings
+
+        ![desktop-form-buttons](static/readme/testing/add_booking_duplicate-sm.jpg)
+
+        2. Booking a date in tha past 
+        3. Client age is below 18 or over 90
+
+        ![desktop-form-buttons](static/readme/testing/add_booking_age_past_error.jpg)
+        ![desktop-form-buttons](static/readme/testing/add_booking_over_90.jpg)
+
+
+
+
+
+    - Django handles other form validation isssues, like empty fields and prevents user from entering too many characters.
+
+    ![desktop-form-buttons](static/readme/testing/django_empty_field.jpg)
+
+
+    - If the form is valid then:
+
+        1. The booking instance will be saved
+        2. The user will be redirected to their appointments page where they can view all their bookings.
+        3. A success message will inform the user that they successfully booked an appointment
+
+    ![desktop-form-buttons](static/readme/testing/booking_success.jpg)
+
 #
 2. As a **Site User** I can **pick a date and time** so that **I can reserve a timeslot for my appointment.**
 
@@ -147,48 +201,83 @@ There are several screenshots of the features in the [README.md](README.md) file
 
 </details>
 
+- - -
+
 ### Epic 3: Edit Functionality
 
-- - -
+
 <details>
-<summary></summary>
+<summary>User Stories test cases</summary>
 <br>
 
 #### **User Stories**
 1. As a **Site User** I can **use the change button** so that **I can edit an appointment on my profile to a different date/time**
 
-    - Authorised user can view the booking form and submit a booking.
-    - The form contains a submit button which will make a post request and save the booking if form is valid.
-    - The form contains a cancel button which redirects straight to the Appoinmtents page in case the user changes their mind.
+    - Authorised user can view their appointments in their Appointments page.
+    - Each appointment displays a change and delete button as seen in the previous test case pictures.
+    - When a user clicks the change button they will be redirected to an edit form containing the fields related to the appoinment information.
+    - The fields will be prepoulated with the appointment data.
 
 
-    ![desktop-form-buttons](static/readme/testing/add-booking-submit-buttons.jpg)
-    ![mobile-form-buttons](static/readme/testing/mobile/submit-cancel-buttons-forms.jpg)
-            
+    ![desktop-change button](static/readme/testing/edit_form.JPG)
+   
+    - Like the add booking form, the edit booking form prevents users from booking a duplicate date excluding the date of the form being edited in case the user wants to edit another field and keep that date.
+    - If the booking is a duplicate the form will not save and will throw an error to the user explaining the problem with the duplicate date.
+
+    ![desktop-change button](static/readme/testing/edit_form-duplicate.jpg)
+
+    - The edit form will also prevent user from booking a date in the past.
+
+    ![desktop-change button](static/readme/testing/edit-form-past-date.jpg)
+
+    - The edit for contains 2 buttons, one to submit changes and one to "Don't change".
+
+    ![desktop-change button](static/readme/testing/edit_form_buttons.JPG)
+
+    - If the user clicks don't change, they will be redirected back to their appoiments page without saving any changes.
+    - If the user clicks Submit changes and there are no field errors in the form then:
+        1. The changes will be saved to the booking instance.
+        2. The user will be directed to the appointments page withthe update appoinment data.
+        3. A success message will be displayed to the user.
+
+    ![desktop-change button](static/readme/testing/edit-booking-success.jpg)
+
+
+
+
 
 #   
 
-
 </details>
-### Epic 4: Delete Functionality
 
 - - -
+
+### Epic 4: Delete Functionality
+
 <details>
-<summary></summary>
+<summary>User Stories test cases</summary>
 <br>
 
 #### **User Stories**
 1. As a **Site User** I can **cancel appointments** so that **I can delete an appointment from my profile**
 
 
-    - Authorised user can view the booking form and submit a booking.
-    - The form contains a submit button which will make a post request and save the booking if form is valid.
-    - The form contains a cancel button which redirects straight to the Appoinmtents page in case the user changes their mind.
+    - Authorised user can view their appointments in their Appointments page.
+    - Each appointment displays a change and delete button as seen in the previous test case pictures.
+    - There is defensive programmingin place to prevent users from accidentally deleting an appointment.
+    - If a user clicks the delete button, they will be redirected to a confiramtion page where they will be asked to confirm their delete decision.
 
+    ![desktop-form-buttons](static/readme/testing/cancel-confirmation-page.JPG)
+    ![mobile-form-buttons](static/readme/testing/mobile/cancel-confirmation-mobile.jpg)
 
-    ![desktop-form-buttons](static/readme/testing/add-booking-submit-buttons.jpg)
-    ![mobile-form-buttons](static/readme/testing/mobile/submit-cancel-buttons-forms.jpg)
-            
+    - If the user clicks "No Keep it", they will be redirected to the appointments page.
+    -If the user clicks "Yes, cancel it" then:
+        1. The booking instance will be deleted.
+        2. The user will be redirected back to the appointments page.
+        3. A success message will be displayed confriming the cancellation of the appoinment.
+    ![desktop-form-buttons](static/readme/testing/boooking-delete-success.jpg)
+
+    
 
 #   
 
@@ -198,151 +287,66 @@ There are several screenshots of the features in the [README.md](README.md) file
 
 - - -
 
-## FEATURES TESTING
+## MANUAL TESTING
 
 <details>
 <summary>👇</summary>
 
-The features were manually tested as defensive programming during the development of this project and also after it was finished with the below user acceptance testing:
-
-
- Video recorded with testing:
-  
-![Click here to watch](https://github.com/luandretta/network/assets/113333171/bc92614c-b519-40a2-8570-186dfa59dde2)
+The features were manually tested during the development of this project and also after it was finished with the below user acceptance testing:
 
 
 | Page | User Action | Expected Result| Notes |
 | --- | --- | --- | --- |
-|  **Home Page**   |  |  | |
-| Landing | Click on Logo | Redirection to Home page | Pass |
-| | Click on Sign Up button  | Redirection to Sign Up page | Pass |
-| | Click on Sign In button | Redirection to Sign In page | Pass |
-| Logged in | Click on Logo | Redirection to Main Feed | Pass |
-| **Sign Up** |  |  |  |
-| | Enter valid email address | Field will only accept email address format | Pass |
-| | Enter valid password (twice) | Field will only accept password format | Pass |
-| | Click Sign Up button on sign up page  | Redirects user to feed and displays message | Pass |
-| | Click on Sign In link | Redirection to Sign In page | Pass |
-| **Sing In** |  |  |  |
-| | Enter valid email address | Field will only accept email address format or valid username | Pass |
-| | Enter valid password | Field will only accept password format | Pass |
-| | Click Login button on login page | Redirects user to main feed and displays message | Pass |
-| | Click Forgot Password | Redirects user to password reset page | Pass |
-| | Click on Sign Up link | Redirection to Sign Up page | Pass |
-| **Sing Out** |  |  |  |
-| | click on dropdown menu, then sign out | Redirects to sign out page | Pass |
-| | Click to confirm to sign out  | Redirects to landing page and displays message with the sign out confirmation | Pass |
-| **Password Reset**|  |  |  |
-| | Enter valid email address and click Reset Password button| Request confirmation | Pass |
-| | Receive email with link to reset password | The link to reset the password is valid | Pass |
-| | Click on the reset password link | Redirects user to change his password | Pass |
-| | Attempt to use the reset password link twice | The link won't be accepted | Pass |
-| **Main Feed** |  |  |  |
-| | Create a post only with text as content | New post only with text is created | Pass |
-| | Create a post only with picture | User is prompted to type something into the content field before sending | Pass |
-| | Create a post with text and picture | New post with text and picture is created | Pass |
-| | Click send on new post form without adding content | User is prompted to enter something into the field before sending | Pass |
-| | Click on a post | User will be redirected to the post detail page | Pass |
-| | Click on the username on a post | User will be redirected to the post author's profile | Pass |
-| | Click the like button on a post | Like button will fill with colour and the like count will increase by 1, Post author receives a notification letting them know someone has liked their post | Pass  |
-| | Click the like button on a post already liked by the user | Like button will become clear in the middle like count will decrease by 1 | Pass |
-| | Click the dislike button on a post | Dislike button will fill with colour and the dislike count will increase by 1 | Pass  |
-| | Click the dislike button on a post already liked by the user | Dislike button will become clear in the middle dislike count will decrease by 1 | Pass  |
-| | Click edit icon on own post | User is redirected to post edit page | Pass   |
-| | Click delete icon on own post | User is redirected to post delete confirmation page | Pass  |
-| | Click on the pagination | Change the pages correctly | Pass |
-| **Following Feed** |  |  |  |
-| | Display only post from users who are being followed | User reads only posts of the users he follows | Pass |
-| | The user is not following anyone and click on Following | Message to try follow other users | Pass |
-| | Click on a post | User will be redirected to the post detail page | Pass |
-| | Click on the username on a post | User will be redirected to the post author's profile | Pass |
-| | Click the like button on a post | Like button will fill with colour and the like count will increase by 1, Post author receives a notification letting them know someone has liked their post | Pass  |
-| | Click the like button on a post already liked by the user | Like button will become clear in the middle like count will decrease by 1 | Pass |
-| | Click the dislike button on a post | Dislike button will fill with colour and the dislike count will increase by 1 | Pass  |
-| | Click the dislike button on a post already liked by the user | Dislike button will become clear in the middle dislike count will decrease by 1 | Pass   |
-| | Click edit icon on own post | User is redirected to post edit page | Pass  |
-| | Click delete icon on own post | User is redirected to post delete confirmation page | Pass  |
-| | Attempt to delete a post as admin | Admin is redirected to delete page | Pass |
-| | Click on the pagination | Change the pages correctly | Pass |
-| **Edit Post** | | | | 
-| | Fill in post form and click submit | Original post can be edited | Pass | 
-| | Click on the Back To Post button | User will be redirected to the original post | Pass | 
-| **Delete Post** | | | | 
-| | Click on the Delete button | Post will be permanently deleted | Pass | 
-| | Click on the Back To Post button | User will be redirected to the original post | Pass | 
-| **Comments on Post Detail** | | | | 
-| | Comment a post | New comment is created, the post author is notificated | Pass |
-| | Click send on new comment form without adding content | User is prompted to enter something into the field before sending | Pass |
-| | Click the like button on a comment | Like button will fill with colour and the like count will increase by 1, Post author receives a notification letting them know someone has liked their post | Pass  |
-| | Click the like button on a post already liked by the user | Like button will become clear in the middle like count will decrease by 1 | Pass |
-| | Click the dislike button on a post | Dislike button will fill with colour and the dislike count will increase by 1 | Pass  |
-| | Click the dislike button on a post already liked by the user | Dislike button will become clear in the middle dislike count will decrease by 1 | Pass   |
-| | Click edit icon on own comment | User is redirected to comment edit page | Pass  |
-| | Click delete icon on own comment | User is redirected to comment delete confirmation page | Pass  |
-| | Click on the username on a comment | User will be redirected to the comment author's profile | Pass | 
-| | Click on the comment icon | Open a form to reply the comment | Pass | 
-| | Click edit icon on own comment | User is redirected to comment edit page | Pass | 
-| | Click delete icon on own comment | User is redirected to comment delete page | Pass | 
-| | Click on the pagination | Change the pages correctly | Pass |
-| | Attempt to delete a comment as admin | Admin is redirected to  delete page | Pass |
-| | Brute forcing the URL to delete another user's comment if not on your post | Redirects user to error page | Pass | 
-| **Edit Comment** | | | | 
-| | Fill in comment form and click submit | Original comment will be edited | Pass | 
-| | Click on the Back To Post button | User will be redirected to the original post | Pass | 
-| **Reply on Post Detail** | | | | 
-| | Reply a comment | New reply is created, the comment author is notificated | Pass |
-| | Click delete icon on own reply | User is redirected to  delete page | Pass | 
-| | Attempt to delete a post as admin | Admin is redirected to  delete page | Pass |
-| **Delete Comment or Reply** | | | | 
-| | Click on the Delete button | Comment or reply will be permanently deleted | Pass | 
-| | Click on the Back button | User will be redirected to the original post | Pass | 
-| **Own Profile** | | | | 
-| | Click on Profile button in dropdown menu | User will be redirected to their Profile page | Pass | 
-| | Click on the Edit icon | User will be redirected to the edit profile page | Pass | 
-| | Click on the Back To Feed button | User will be redirected to main feed | Pass | 
-| | Click on followers | User will be redirected to followers list page | Pass | 
-| | Click on a post | User will be redirected to the individual post page | Pass | 
-| | Click edit icon on own post | User is redirected to post edit page | Pass | 
-| | Click delete icon on own post | User is redirected to post delete confirmation page | Pass | 
-| | Click on the pagination | Change the pages correctly | Pass |
-| **Update Profile** | | | | 
-| | Attempt to update the data (Name, bio, location, birthdate, profil and background pictures) | The information are saved correctly | Pass | 
-| | User didn't upload pictures | Default pictures are used | Pass |
-| | Click on change password | User will be redirected to change password page | Pass | 
-| | Brute forcing the URL to edit another user's profile | Redirects user to error page | Pass |
-| **Change Password** | | | | 
-| | Attempt to change password, type the old password and the new twice | The password is changed successfully | Pass | 
-| **Other Profile** | | | | 
-| | Click on the follow button | User will follow current profile they're on and button will change to say unfollow, profile owner receives a notification letting them know someone has followed them and followers count will increase by 1 | Pass |  
-| | Click on the unfollow button | User will unfollow current profile they're on and button will change to say follow, followers count will decrease by 1 | Pass | 
-| | Click on followers | User will be redirected to followers list page | Pass |  
-| | Click on the back button | User will be redirected to their feed | Pass | 
-| | Click on a post | User will be redirected to the  post detail page | Pass | 
-| | Click on the pagination | Change the pages correctly | Pass |
-| **Followers Page** | | | | 
-| | Click on user's name | User will be redirected to  user's profile | Pass |
-| | Click on the pagination | Change the pages correctly | Pass |
-| **Search Page** | | | | 
-| | Type text into search form into nav and click the search icon | User is directed to a page with a list of  users containing his search query | Pass | If there are no users and/or posts containing the query the page will let the user know there was no results in either or both for their query |
-| | Search for a non-existing user | Message  no User was found and to try again | Pass |
-| | Click search icon with empty input | Redirects to users list | Pass |
-| | Click on user's name | User will be redirected to  user's profile | Pass | 
-| | Click on the pagination | Change the pages correctly | Pass |
-| **Users Page** | | | | 
-| | Click on user's name | User will be redirected to  user's profile | Pass |
-| | Click on the pagination | Change the pages correctly | Pass |
-| **Notifications** | | | | 
-| | Click on like notification | User will be redirected to post detail from the liked post, the counter decrease by 1 | Pass |
-| | Click on following notification | User will be redirected to  user's profile who started following him, the counter decrease by 1 | Pass |
-| | Click on comment notification | User will be redirected to post detail from the comment, the counter decrease by 1 | Pass |
-| | Click on reply notification | User will be redirected to post detail from the comment, the counter decrease by 1 | Pass |
-| | Click on X | The notification will be closed, the counter decrease by 1 | Pass |
-|**Error Pages** | | | | 
-| | Click on Home button | User will be redirected to his feed | Pass | 
+|  **Home Page**   | |  | |
+| All users | Click on Logo | Redirect to Landing page | Pass |
+| All users | Click on Home Navlink | Redirect to Landing page | Pass |
+| Logged-out users | Click on Book an Appointment Navlink | Redirect to Sign In Page | Pass |
+| Logged-out users | Click on Book Now! button | Redirect to Sign In Page | Pass |
+| Logged-out users| Click on Login Navlink  | Redirection to Sign In page | Pass |
+| Logged-out users| Click on Sign Up link on Sign in page | Redirect to Sign Up page | Pass |
+| Logged-out users| Click on Account button | Redirect to Sign In page | Pass |
+| Logged-in users | Click on Book an Appointment Navlink | Redirect to booking form | Pass |
+| Logged-in users | Click on Book Now! button | Redirect to booking form | Pass |
+| Logged-in users| Click on Logout Navlink  | Redirect to Sign Out page | Pass |
+| Logged-in users| Click on Appointments in nav dropdown | Redirect to Appoinments page | Pass |
+| Logged-in users| Click on Logout in nav dropdown | Redirect to Sign Out page | Pass |
+| **Sign Up Page** |  |  |  |
+| | Enter valid username | Field will not accept duplicate usernames | Pass |
+| *optional field | Enter valid email address | Field will only accept email address format | Pass |
+| | Enter valid password (twice) | Field will only accept identical passwords | Pass |
+| | Click Sign Up button on sign up page  | Redirect to home and displays success message | Pass |
+| | Click on Sign In link | Redirect to Sign In page | Pass |
+| **Sign In Page** |  |  |  |
+| | Enter valid username | Field will only accept valid username | Pass |
+| | Enter valid password | Field will only accept valid password  | Pass |
+| | Click Sign In button | Redirects home and displays success message | Pass |
+| | Click on Sign Up link | Redirect to Sign Up page | Pass |
+| **Sign Out Page** |  |  |  |
+| | Click to confirm to sign out  | Redirect to landing page and display success message confirming sign out | Pass |
+| **Booking Form Page** |  |  |  |
+| | Click Submit | If form is valid, redirect to appointments page and display success message | Pass |
+| | Click Cancel | Redirect to appointments page without saving appointment data | Pass |
+| **Edit Form Page** |  |  |  |
+| | Click Submit Changes button | If form is valid, redirect to appointments page and display success message | Pass |
+| | Click Don't Change button | Redirect to appointments page without updating appointment data | Pass |
+| **Appointments Page** | | | | 
+| New User | Click Book an Appointment button | Redirect to booking form page | Pass |
+| Returning User | View Appointments | User can view all their previously booked appointments | Pass |
+| Returning User | Click Change | Redirect to prepopulated edit form of the specific boooking | Pass |
+| Returning User | Click Cancel | Redirect to cancel appointment confirmation page | Pass |
+| **Cancel Confirmation Page** | | | | 
+|  | Click "No, Keep it" button| Redirect to Appointment Page | Pass |
+|  | Click "Yes, Cancel it" button | Redirect to Appointment Page and display cancel success message | Pass |
 |**Footer** | | | | 
-| | Click on Linkedin Icon | Redirects to LinkedIn from the creator of this application | Pass |
-| | Click on GitHub Icon | Redirects to GitHub repository | Pass |
-| | Click on "Lucimeri Andretta" link | Redirects to GitHub from the creator of this application | Pass |
+| | Click on Social Media Icon | Opens social media site in a new window | Pass |
+|**Defensive Programming** | | | | 
+| Logged out-user| Type the urls for appointments page, or forms direclty into the browser | Redirect to sign-in page | Pass |
+| Logged out-user| Type an unknown url path into the browser | Redirect to custom 404 page | Pass |
+| Logged in-user| Click Delete button on appoinments | Redirect confirmation page before deleting | Pass |
+| Logged in-user| Click Logout navlinks | Redirect confirmation page before logging out| Pass |
+
+
+
 
 </details>
 
