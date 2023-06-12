@@ -1,3 +1,7 @@
+* {
+    scroll-behavior: auto !important;
+}
+
 body {
     height: 100%;
     width: 100%;
@@ -7,11 +11,11 @@ body {
 
 .form-control:focus {
     box-shadow: 0 0 5px rgba(110, 115, 122, 1) !important;
-  }
+}
 
-  .btn {
+.btn {
     box-shadow: 0 0 5px rgba(110, 115, 122, 1) !important;
-  }
+}
 
 
 /* landing page */
@@ -32,7 +36,7 @@ body {
 .color-overlay {
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .landing-text {
@@ -46,7 +50,7 @@ body {
     font-size: 300%;
     font-weight: 700
 }
-    
+
 .landing-text h2 {
     font-size: 100%;
 }
@@ -83,7 +87,7 @@ body {
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color:#6E737A;
+    background-color: #6E737A;
     color: #fff;
     font-weight: 700;
     border-color: #19192D;
@@ -103,12 +107,12 @@ body {
     font-weight: 700;
 }
 
- .btn-secondary {
+.btn-secondary {
     outline: 0 0 5px rgba(110, 115, 122, 1) !important;
     box-shadow: 0 0 5px rgba(110, 115, 122, 1);
     background-color: #6E737A;
     color: #fff;
-    
+
 }
 
 .btn-secondary:hover,
@@ -143,16 +147,18 @@ body {
     .bg-image {
         background-image: url(https://res.cloudinary.com/dg4yiogei/image/upload/v1674067019/cropped_2_tb9xhh.jpg);
     }
+
     /* .landing-text{
         vertical-align: middle;
 
     } */
-   .landing-text h1 {
+    .landing-text h1 {
         font-size: 200%;
     }
 
-    .landing-text h2 {font-size: 70%;
+    .landing-text h2 {
+        font-size: 70%;
     }
-        
-    
+
+
 }
