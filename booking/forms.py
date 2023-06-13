@@ -7,7 +7,7 @@ import datetime
 
 class DateInput(forms.DateInput):
     """
-    Class to make a calender showing when choosing the date.
+    Class to make a calender show when choosing the date.
     See sources in README
     """
     input_type = 'date'
@@ -39,23 +39,11 @@ class AddBooking(forms.ModelForm):
                 format=('%Y-%m-%d'),
                 attrs={
                     'class': 'form-control',
-                    'placeholder': 'Select a date',
                     'type': 'date'
                 }
             ),
             'time': forms.TimeInput(attrs={'type': 'time'}),
         }
-
-    def __init__(self, *args, **kwargs):
-        super(AddBooking, self).__init__(*args, **kwargs)
-        self.fields['first_name'].required = True
-        self.fields['last_name'].required = True
-        self.fields['age'].required = True
-        self.fields['gender'].required = True
-        self.fields['date'].required = True
-        self.fields['time'].required = True
-        self.fields['goals'].required = True
-        self.fields['health_info'].required = True
 
     def clean_age(self):
         """
@@ -89,19 +77,11 @@ class AddBooking(forms.ModelForm):
 
         return date
 
-    def clean(self):
-        cleaned_data = super().clean()
-        for field in cleaned_data:
-            if cleaned_data[field] in (None, ''):
-                print(f"Empty field: {field}")
-                raise forms.ValidationError(
-                    "Booking failed. Please fill"
-                    "in all the required fields."
-                    )
-        return cleaned_data
-
 
 class UpdateBooking(forms.ModelForm):
+    """
+    Creates the form to be rendered for update_booking view
+    """
     class Meta:
         model = BookAppointment
         fields = ('date',

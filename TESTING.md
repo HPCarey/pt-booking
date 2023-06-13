@@ -351,13 +351,75 @@ The features were manually tested during the development of this project and als
 </details>
 
 - - -
-1. HTML
-* HTML validation was done using [W3C Markup validator](https://validator.w3.org/)
-* Some initial errors:
-    * A....
-        * This error is as a result of 
-    * Another error showed ...
-![HTML](static/images/readme_images/)
+
+## Code Validation
+
+<details>
+<summary>👇</summary>
+
+1. ### HTML Validation
+
+HTML validation was done using 
+[W3C Markup Validator](https://validator.w3.org/). In order to validate the HTML without getting errors due to the Django template tags, the following steps were followed:
+
+1. Navigate to the deployed site url using the google chrome browser.
+2. Navigate to the page of the site you want to validate.
+3. Right click anywhere on said page and select "View page source".
+4. Copy the source code and open the validator.
+5. Select Validate by direct input and paste the code into the validator field and click "Check"
+
+Below are the issues encountered during vinitial alidation: 
+
+**Home Page**
+
+* A warning to add a language attribute to the html tag
+* Several Info messages to remove trailing / from self-closing elements like <img> and <link>. I discovered that these were getting added automatically whenever I used the prettier command to tidy up the template code. 
+    ![home-page](static/readme/testing/code-validation/hmtl-val-homepage.JPG)
+
+    ![all-messages](static/readme/testing/code-validation/trailing-slash-errors.JPG)
+
+**Sign in Page**
+
+* No errors
+
+**Sign up Page**
+
+* No errors
+
+**Sign out Page**
+
+* No errors
+
+**Add booking form page**
+
+* An attribute error for using "placeholder" with date input. The source of this error was in the forms.py date widget. I simply removed the placeholder attribute.
+* The end tag error and unlcosed element were related. The both errors were dealt with upon locating the unclosed div and closing it.
+
+    ![booking-page](static/readme/testing/code-validation/booking_form_validator_errors.JPG)
+
+**Update booking form page**
+
+* Unsurprisingly the same unclosed div error results occured on this page as the one in the booking form page. Since I create the update form template by copy, pasting and making adjustments to the booking form, this was expected and fixed in the same manner.
+
+
+    ![booking-page](static/readme/testing/code-validation/update_booking_error.JPG)
+
+
+**User Profile page**
+
+* No errors
+
+
+**Cancel appoinment confirmation page**
+
+* An empty attribute value error for the form attribute action="".
+
+    ![booking-page](static/readme/testing/code-validation/cancel_confirmation_error.JPG)
+
+**404 page**
+
+* No errors
+
 
 
 2. CSS
@@ -377,6 +439,7 @@ The features were manually tested during the development of this project and als
     * I addressed this issue by 
 * The ligthouse results for mobile showed 
 * The final lighthouse results showed 
+</details>
 
 #### Lighthouse results
 ![Lighthouse results](static/images/readme_images/)
@@ -393,12 +456,3 @@ The features were manually tested during the development of this project and als
 
 [Back to top](#contents)
 
-### **Manual Testing**
-
-* All links are working.
-* Clicking on the logo gets you back to the home page.
-* If you try to access a page which requires the user to be logged in, you are redirected to the login page.
-* An alert is shown everytime a user tries to delete something.
-* A confirmation message is shown every time an action is performed.
-* All CRUD (Create, Read, Update, Delete) functionality is working as it should.
-* All forms have validation for the required fields.

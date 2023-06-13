@@ -108,8 +108,6 @@ body {
 }
 
 .btn-secondary {
-    outline: 0 0 5px rgba(110, 115, 122, 1) !important;
-    box-shadow: 0 0 5px rgba(110, 115, 122, 1);
     background-color: #6E737A;
     color: #fff;
 

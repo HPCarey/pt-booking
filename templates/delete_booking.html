@@ -21,7 +21,7 @@
       </div>
     </div>
    
-    <form action="" method="post">
+    <form method="post">
       {% csrf_token %}
       <input type="submit" value="Yes, cancel it" class="btn btn-danger">
       <a href="{% url 'user_profile' %}" class="btn btn-success">No, keep it</a>
