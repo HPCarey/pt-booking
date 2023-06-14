@@ -357,7 +357,7 @@ The features were manually tested during the development of this project and als
 <details>
 <summary>👇</summary>
 
-1. ### HTML Validation
+1. ### **HTML Validation**
 
 HTML validation was done using 
 [W3C Markup Validator](https://validator.w3.org/). In order to validate the HTML without getting errors due to the Django template tags, the following steps were followed:
@@ -419,27 +419,99 @@ Below are the issues encountered during vinitial alidation:
 **404 page**
 
 * No errors
+#
+
+2. ### CSS Validation
+CSS Validation was done using [Jigsaw](https://jigsaw.w3.org/css-validator/)
+
+* One error occured for the .btn-secodary class. Too many values. 
+* I am not 100% sure, but I think perhaps this error occured becasue I had already targeted the buttons with these rules somewhere else already.
+
+![CSS](static/readme/testing/code-validation/css-validator-error.JPG)
+
+* After playing around with this css for a bit I realised that the particular rule was not really making a differnece to the display and after commenting it out to be sure I decide to delete it.
+* After double checking all my styles were working ok, I ran the css through the validator again and it came up clean.
+
+![CSS_no_error](static/readme/testing/code-validation/css-validator-fixed.JPG)
+
+#
+
+3. ### Python Validation
+ Python Validation was done using the [CI Python Linter](https://pep8ci.herokuapp.com/)
+
+#### **Profject files**
+
+**settings.py**
+* Initial warnings for this file were as seen in this screenshot:
+
+    ![settings-warning](static/readme/testing/python-code-validation/settings_warnings.JPG)
+
+* The settings.py line too long warnings are from the django password validators. 
+    ![settings-warning](static/readme/testing/python-code-validation/auth-password-validators.JPG)
+
+* After consulting my own mentor and other mentors on slack, I left the too long lines in this particular case as they are part of the django automated code and splitting the string up might lead to unforseen issues. 
+* The final validation results look like this:
+
+    ![settings-warning](static/readme/testing/python-code-validation/settins_final.JPG)
 
 
+**urls.py**
+* No errors found
 
-2. CSS
-* CSS Validation was done using [Jigsaw](https://jigsaw.w3.org/css-validator/)
+    ![settings-warning](static/readme/testing/python-code-validation/urls-main.JPG)
 
-* No bugs were found in the CSS at the final tetsing stage as I had been testing throughout development and CSS bugs were common and obvious in the gitpod browser so were quickly identified and fixed.
 
-![CSS](static/images/readme_images/)
+#### **Booking app files**
 
-4. Python 
+**admin.py**
+* No errors found
 
-[PEP8 Online Validator](http://pep8online.com/)
+    ![settings-warning](static/readme/testing/python-code-validation/adming-no-errors.JPG)
 
-[Back to top](#contents)
+
+**forms.py**
+* No errors found
+
+    ![settings-warning](static/readme/testing/python-code-validation/forms_results.JPG)
+
+[Back to top](#testing)
+
+**models.py**
+* No errors found
+
+    ![settings-warning](static/readme/testing/python-code-validation/models_results.JPG)
+
+[Back to top](#testing)
+
+**urls.py**
+* No errors found
+
+    ![settings-warning](static/readme/testing/python-code-validation/app_urls.JPG)
+
+[Back to top](#testing)
+
+**views.py**
+* No errors found
+
+    ![settings-warning](static/readme/testing/python-code-validation/views_results.JPG)
+
+[Back to top](#testing)
+
+
+</details>
+
+- - -
+## Lighthouse testing
+
+<details>
+<summary>👇</summary>
+
 ### **Lighthouse Testing**
  * Initial results showed 
     * I addressed this issue by 
 * The ligthouse results for mobile showed 
 * The final lighthouse results showed 
-</details>
+
 
 #### Lighthouse results
 ![Lighthouse results](static/images/readme_images/)
