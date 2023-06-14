@@ -437,7 +437,8 @@ CSS Validation was done using [Jigsaw](https://jigsaw.w3.org/css-validator/)
 #
 
 3. ### Python Validation
- Python Validation was done using the [CI Python Linter](https://pep8ci.herokuapp.com/)
+ Python Validation was done using the [CI Python Linter](https://pep8ci.herokuapp.com/).
+ I used the gitpod problems tab to minimise python code errors as I went along, so there were not that many errors to address from passing the code through the linter. 
 
 #### **Profject files**
 
