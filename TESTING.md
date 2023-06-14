@@ -1,15 +1,74 @@
 # Testing
 * [Back to README Home page](/README.md)
 #
-
-- [Responsive Testing](#responsiveness-testing)
-- [User Stories Testing](#user-stories-testing)
-- [Validator Testing](#validator-testing)
-- [Lighthouse Testing](#lighthouse-testing)
 - [Manual Testing](#manual-testing)
+    - [Responsive Testing](#responsive-testing)
+    - [Lighthouse Testing](#lighthouse-testing)
+    - [Browser Testing](#browser-testing)
+    - [User Stories Testing](#user-stories-testing)
+    - [Features Testing](#features-testing)
+    
+- [Code Validation](#code-validation)
+
+## **Manual Testing**
+
+* This site was tested manually by:
+    - Testing the UI and functionality of features for different device sizes and browsers.
+    - Evaluating performance and loading times using lighthouse and interacting wiht the site as a user.
+    - Ensuring that user story features are functioning as they should be with the expected outcome from specific user actions.
+    - All links and user pathways function as intended and navigate the user as expected through the site.
+* The details of how the manual testing was carried out can be seen below.
+* I have also included the code validation in the TESTING document.
+
+## Responsive Testing
+<details>
+<summary>👇</summary>
+
+* Site resonsivity was tested using google chrome DevTools and with my own Galaxy S20 FE 5G.
+* The screenshot below shows a list of the devices that were tested. 
 
 
-## USER STORIES TESTING
+    ![responsive](static/readme/testing/responsive.png)
+
+* The site was shown to be fully responsive, readble and functional on all of the tested devices.
+* One minot issue showed up with the buttons on the update form page which did not display side by side but rather one above the other on the Surface Pro, iPad mini, iPad Air and the Galaxy fold. This appeared tp be a minor issue only affecting UI design and not functionalit yor readability. On most devices it displayed correctly.
+
+* Site resposivity was also tested on Amiresponsive as seen in the README.
+* I also included some screenshots of features in mobile size in the user story testing to show the responsive design. 
+
+[Back to top](#testing)
+</details>
+
+- - -
+## Lighthouse testing
+
+<details>
+<summary>👇</summary>
+
+* Lighthouse testing in chrome DevTools showed an overall performance of 99% and good SEO and Accessibility scores.
+* There were some suggestions to improve best practice scores which will be added to the future features for this site.
+
+    ![Lighthouse results](static/readme/testing/lighthouse-testing.JPG)
+
+[Back to top](#testing)
+</details>
+
+- - -
+
+## Browser testing
+
+<details>
+<summary>👇</summary>
+
+* The site was developped using Google Chrome browser and tested in Firefox and Microsoft Edge.
+
+
+[Back to top](#testing)
+</details>
+
+- - -
+
+## User Stories Testing
 
 <details>
 <summary>👇</summary>
@@ -38,6 +97,8 @@ There are several screenshots of the features in the [README.md](README.md) file
 
     ![mobile-landing](static/readme/testing/mobile/landing-mobile.jpg)
 
+[Back to top](#testing)
+
 #
 2. As a **Site User** I can **I can register an account** so that **I can make a booking**
 
@@ -57,7 +118,7 @@ There are several screenshots of the features in the [README.md](README.md) file
 
     ![desktop-sign-up](static/readme/testing/sign-in-success.jpg)
 
-
+[Back to top](#testing)
 #
 
 3. As a **Site User** I can **login** so that **I can make an appointment and/or view my profile and scheduled appointments**.
@@ -80,6 +141,7 @@ There are several screenshots of the features in the [README.md](README.md) file
 
     ![mobile-logged-in-nav](static/readme/testing/mobile/responsive-nav-dropdown-logged-in.jpg)
 
+[Back to top](#testing)
 #
 4. As a **Site User** I can **navigate through the site pages** so that **I can take actions and view information**
     - All navlinks and buttons take logged in users to the correct location.
@@ -105,6 +167,8 @@ There are several screenshots of the features in the [README.md](README.md) file
 
     ![desktop-logout-confirm](static/readme/testing/sign_out_success.jpg)
 
+[Back to top](#testing)
+
 #
 
 5. As a **Site Admin** I can **create, read, update and delete bookings through the django admin panel** so that **I can manage my client bookings.** 
@@ -122,7 +186,7 @@ There are several screenshots of the features in the [README.md](README.md) file
 
     ![desktop-edit](static/readme/testing/admin-edit.JPG)
 
-   
+[Back to top](#testing)
 
 </details>
 
@@ -159,9 +223,6 @@ There are several screenshots of the features in the [README.md](README.md) file
         ![desktop-form-buttons](static/readme/testing/add_booking_over_90.jpg)
 
 
-
-
-
     - Django handles other form validation isssues, like empty fields and prevents user from entering too many characters.
 
     ![desktop-form-buttons](static/readme/testing/django_empty_field.jpg)
@@ -175,6 +236,7 @@ There are several screenshots of the features in the [README.md](README.md) file
 
     ![desktop-form-buttons](static/readme/testing/booking_success.jpg)
 
+[Back to top](#testing)
 #
 2. As a **Site User** I can **pick a date and time** so that **I can reserve a timeslot for my appointment.**
 
@@ -187,6 +249,8 @@ There are several screenshots of the features in the [README.md](README.md) file
     ![mobile-datepicker](static/readme/testing/mobile/mobile-datepicker.jpg)
 
     - The date field will throw an error
+
+[Back to top](#testing)
 #
 
 3. As a **Site User** I can **view my profile page** so that **I can see my upcoming appointments**
@@ -197,7 +261,8 @@ There are several screenshots of the features in the [README.md](README.md) file
     ![desktop-appointments](static/readme/testing/user_profile_appointments.JPG) 
     ![mobile-appointmenta](static/readme/testing/mobile/mobile-profile.jpg)
 
-#   
+[Back to top](#testing)
+
 
 </details>
 
@@ -242,11 +307,7 @@ There are several screenshots of the features in the [README.md](README.md) file
 
     ![desktop-change button](static/readme/testing/edit-booking-success.jpg)
 
-
-
-
-
-#   
+[Back to top](#testing)
 
 </details>
 
@@ -277,17 +338,14 @@ There are several screenshots of the features in the [README.md](README.md) file
         3. A success message will be displayed confriming the cancellation of the appoinment.
     ![desktop-form-buttons](static/readme/testing/boooking-delete-success.jpg)
 
-    
-
-#   
-
+[Back to top](#testing)
 
 </details>
 </details>
 
 - - -
 
-## MANUAL TESTING
+## Features Testing
 
 <details>
 <summary>👇</summary>
@@ -324,9 +382,18 @@ The features were manually tested during the development of this project and als
 | **Sign Out Page** |  |  |  |
 | | Click to confirm to sign out  | Redirect to landing page and display success message confirming sign out | Pass |
 | **Booking Form Page** |  |  |  |
+| | Click submit for an empty form | No redirect and display django empty field error for first form field | Pass |
+| | Click submit with any empty field | No redirect and display django empty field error for the specific form field| Pass |
+| | Select a date that has already been booked | No redirect and display duplicate booking error| Pass |
+| | Select a date in the past| No redirect and display cannot book past date error | Pass |
+| | Select an age below 18| No redirect and display must be over 18 error | Pass |
+| | Select an age over 90| No redirect and display must be under 90 error | Pass |
 | | Click Submit | If form is valid, redirect to appointments page and display success message | Pass |
 | | Click Cancel | Redirect to appointments page without saving appointment data | Pass |
 | **Edit Form Page** |  |  |  |
+| | Click submit with any empty field | No redirect and display django empty field error for the specific form field| Pass |
+| | Select a date that has already been booked | No redirect and display duplicate booking error| Pass |
+| | Select a date in the past| No redirect and display cannot book past date error | Pass |
 | | Click Submit Changes button | If form is valid, redirect to appointments page and display success message | Pass |
 | | Click Don't Change button | Redirect to appointments page without updating appointment data | Pass |
 | **Appointments Page** | | | | 
@@ -341,12 +408,12 @@ The features were manually tested during the development of this project and als
 | | Click on Social Media Icon | Opens social media site in a new window | Pass |
 |**Defensive Programming** | | | | 
 | Logged out-user| Type the urls for appointments page, or forms direclty into the browser | Redirect to sign-in page | Pass |
-| Logged out-user| Type an unknown url path into the browser | Redirect to custom 404 page | Pass |
+| All users| Type an unknown url path into the browser | Redirect to custom 404 page | Pass |
+| All users| On the custom 404 page, click the logo | Redirect to home page| Pass |
 | Logged in-user| Click Delete button on appoinments | Redirect confirmation page before deleting | Pass |
 | Logged in-user| Click Logout navlinks | Redirect confirmation page before logging out| Pass |
 
-
-
+[Back to top](#testing)
 
 </details>
 
@@ -378,6 +445,13 @@ Below are the issues encountered during vinitial alidation:
 
     ![all-messages](static/readme/testing/code-validation/trailing-slash-errors.JPG)
 
+* The results after cleaning up these issues and re-deploying to heroku contain no errors:
+
+    ![all-messages](static/readme/testing/code-validation/html-homepage-final.JPG)
+
+
+[Back to top](#testing)
+
 **Sign in Page**
 
 * No errors
@@ -397,6 +471,12 @@ Below are the issues encountered during vinitial alidation:
 
     ![booking-page](static/readme/testing/code-validation/booking_form_validator_errors.JPG)
 
+* The final results after addressing these issues contain no errors:
+
+    ![booking-page](static/readme/testing/code-validation/add_booking-final.JPG)
+
+[Back to top](#testing)
+
 **Update booking form page**
 
 * Unsurprisingly the same unclosed div error results occured on this page as the one in the booking form page. Since I create the update form template by copy, pasting and making adjustments to the booking form, this was expected and fixed in the same manner.
@@ -404,6 +484,12 @@ Below are the issues encountered during vinitial alidation:
 
     ![booking-page](static/readme/testing/code-validation/update_booking_error.JPG)
 
+* Final results after fixes:
+
+    ![booking-page](static/readme/testing/code-validation/update_booking-final.JPG)
+
+
+[Back to top](#testing)
 
 **User Profile page**
 
@@ -416,9 +502,15 @@ Below are the issues encountered during vinitial alidation:
 
     ![booking-page](static/readme/testing/code-validation/cancel_confirmation_error.JPG)
 
+* Results after removing the unneeded attribute:
+    ![booking-page](static/readme/testing/code-validation/cancel-page-final.JPG)
+
+
 **404 page**
 
 * No errors
+
+[Back to top](#testing)
 #
 
 2. ### CSS Validation
@@ -433,6 +525,8 @@ CSS Validation was done using [Jigsaw](https://jigsaw.w3.org/css-validator/)
 * After double checking all my styles were working ok, I ran the css through the validator again and it came up clean.
 
 ![CSS_no_error](static/readme/testing/code-validation/css-validator-fixed.JPG)
+
+[Back to top](#testing)
 
 #
 
@@ -455,13 +549,14 @@ CSS Validation was done using [Jigsaw](https://jigsaw.w3.org/css-validator/)
 
     ![settings-warning](static/readme/testing/python-code-validation/settins_final.JPG)
 
+[Back to top](#testing)
 
 **urls.py**
 * No errors found
 
     ![settings-warning](static/readme/testing/python-code-validation/urls-main.JPG)
 
-
+[Back to top](#testing)
 #### **Booking app files**
 
 **admin.py**
@@ -469,6 +564,7 @@ CSS Validation was done using [Jigsaw](https://jigsaw.w3.org/css-validator/)
 
     ![settings-warning](static/readme/testing/python-code-validation/adming-no-errors.JPG)
 
+[Back to top](#testing)
 
 **forms.py**
 * No errors found
@@ -502,30 +598,3 @@ CSS Validation was done using [Jigsaw](https://jigsaw.w3.org/css-validator/)
 </details>
 
 - - -
-## Lighthouse testing
-
-<details>
-<summary>👇</summary>
-
-### **Lighthouse Testing**
- * Initial results showed 
-    * I addressed this issue by 
-* The ligthouse results for mobile showed 
-* The final lighthouse results showed 
-
-
-#### Lighthouse results
-![Lighthouse results](static/images/readme_images/)
-
-#### Lighthouse mobile results
-![Lighthouse desktop](static/images/readme_images/)
-
-#### Lighthouse final results
-![Lighthouse final results](static/images/readme_images/)
-
-#### Lighthouse mobile final results
-![Lighthouse mobile final results](static/images/readme_images/)
-
-
-[Back to top](#contents)
-
