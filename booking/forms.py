@@ -93,7 +93,6 @@ class UpdateBooking(forms.ModelForm):
                 format=('%Y-%m-%d'),
                 attrs={
                     'class': 'form-control',
-                    'placeholder': 'Select a date',
                     'type': 'date'
                 }
             ),
