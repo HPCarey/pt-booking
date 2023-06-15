@@ -6,7 +6,8 @@ You can visit the live site [here](https://pt-booking.herokuapp.com/)
 ![Am I Responsive](static/readme/amiresponsive.JPG)
 
 ## Contents
-- [User Experience](#user-experience)
+- [Planning and Project Conception ](#planning-and-project-conception)
+    - [Project Goals](#project-goals)
     - [User Stories](#user-stories)
     - [Agile Methodology](#agile-methodology)
     - [Wireframes](#wireframes)
@@ -34,10 +35,15 @@ You can visit the live site [here](https://pt-booking.herokuapp.com/)
 - [Credits](#credits)
 - [Acknowledgements](#acknowledgements)
 
+## **Planning and Project Conception**
+### **Project Goals**
+The aim of this project was to build a basic booking system for a site owner who is a personal trainer and wants to build a personal brand to promote themselves, attract an online clientele, and to trial a personal site which allows people to book appointments with them easily.  
+#
 ### **Agile Methodology**
 #### **GitHub Project Board**
 
-* This project was made using agile methodologies. Epics, user stories, bugs and issues are recorded on the [Project Board](https://github.com/users/HPCarey/projects/4/views/1)
+* This project was planned and carried out with the use of agile methodologies. 
+* Epics, user stories, bugs and issues are recorded on the [Project Board](https://github.com/users/HPCarey/projects/4/views/1)
 
 ![Screenshot of project board](static/readme/project_board2.png)
 
@@ -45,15 +51,22 @@ You can visit the live site [here](https://pt-booking.herokuapp.com/)
 
 [Back to top](#contents)
 
-## **User Experience**
+
 ### **User Stories**
 * Epics, site user stories and admin user stories can be seen on the [project board](https://github.com/users/HPCarey/projects/4/views/1)
+
+* User stories and Epics can also be viewed in the [issues](https://github.com/HPCarey/pt-booking/issues) for this repo. 
+
+* For a comprehensive list of the user stories and details of how they were implemented, please consult the [TESTING.MD](/TESTING.md) file.
 
 [Back to top](#contents)
 
 
 ### **Wireframes**
 Wireframes were created using Balsamiq.
+
+* Originally the wireframe plans a profile page where users could view and potentially edit their personal information.
+* I wanted to focus more on the booking aspect of the site so the personal information aspect did not get implemented but will be noted as a future feature as the site concept is tested and developed with the site owner.
 
 See [Wireframes.](static/readme/pt-booking-app.pdf)
 
@@ -67,25 +80,25 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 [Back to top](#contents)
 
 ### **Database**
-[Lucid chart](https://www.lucidchart.com/pages/) was used to make the entity relationship diagram showing my custom models and the user model which is built with Django AllAuth. Lucid chart was also used to make the flow chart mapping out the user journey throuh the site. 
+* [Lucid chart](https://www.lucidchart.com/pages/) was used to make the entity relationship diagram showing my custom model and the user model which is built with Django AllAuth. 
+* Lucid chart was also used to make the flow chart mapping out the user journey throuh the site. 
 
 ![Flow Chart](static/readme/flow_chart_final.png)
 
 ![Database](static/readme/entity_relationship_diagram_final.png)
 
 [Back to top](#contents)
+
 ### **Design**
-#### **Typography**
-* [Font awesome](https://fontawesome.com/)
-* I used [figma](https://www.figma.com/file/RgYErSjELw326fP4MH6jt4kT/Nunito-Pairings/duplicate?node-id=1%3A198) to check what fonts pair well with Nunita and ended up going with Roboto.
 
 #### **Images**
  
-* Hero Images were taken from 
-    * [Pexels](https://www.pexels.com/photo/man-working-out-2294361/)
+* Hero Images were taken from pexels from 
+    * The image source [Pexels](https://www.pexels.com/photo/man-working-out-2294361/)
+    * The photographer [Li Sun](https://www.pexels.com/@823sl/)
 
 #### **Colour Scheme and Accessibility**
- * First I uplaoded the hero image to [colormind](http://colormind.io/image/)to generate a few different palettes.
+ * First I uplaoded the hero image to [colormind](http://colormind.io/image/) to generate a few different palettes.
 
  * Input these hex values into the contrast grid on [Eightshapes](https://contrast-grid.eightshapes.com/) to check the WCAG 2.0 minimum contrast scores which helped me to pick a background and foreground colour that meet the accessibility requirements for good UX.
 
@@ -100,105 +113,58 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 [Back to top](#contents)
 ## **Features**
 ### **Existing Features**
+* For a comprehensive list of all site features, their function and UI design, please refer to the [User Stories Testing](/TESTING.md#user-stories-testing) section of the [TESTING.md](/TESTING.md) document. 
+* Here I will refer to some features that were not featureed in the user story testing section or for which there is a UI/design aspect that might require explanation.
 ### **logo**
-* Logo provided by site owner for his business
+* Logo provided by site owner for his business.
+* Used as the favicon for the webpage as well as the navbar logo home link.
+* The logo is also featured on the custom 404 page.
 ![logo](static/images/logo_original.jpeg)
-#### **Navigation Bar**
-* The navigation bar is featured on all pages of the site. 
-* The Login link changes to Logout depending on user authorisation.
-* The account link takes you to the login page.
-* When user is logged in, the account link becomes a my profile dropdown menu giving logged in users access to their booking information via the user profile page and a logout link. 
-* The logo acts as a home link as well as the home-nav link.
-* The nav bar is fully responsive using bootstrap and becomes collapsable for mobile and tablet.
 
-![Navbar desktop]()
+### **navbar**
+* The navbar is fully responsive and changes to reflect the user's logged-in or logged-out status.
+![navbar-logged-in](static/readme/testing/logged-out-nav.JPG)
+![navbar-logged-out](static/readme/testing/logged-in-nav.JPG)
+![mobile-logged-out](static/readme/testing/mobile/logged-out-repsonsive-nav.jpg)
+![mobile-logged-out](static/readme/testing/mobile/responsive-nav-dropdown-logged-in.jpg)
+![mobile-logged-out](static/readme/testing/mobile/responsive-nav-logged-in-sm.jpg)
 
-![Navbar mobile expanded]() 
+* The navbar also reflects the current webpage that the user is visiting through highlighting the active navlink in a white colour.
+* I wanted to feature a dropdown menu in the navabr to have the option of adding more features for returning users in  the future. 
+* In the future, the nav dropdown could feature a personal profile containing client health and fitness information and goals, an appointments history and/or purchase history, and a programmes page featuring their personalised training programme from their trainer.
 
-![Navbar mobile collapsed]()
+### **Landing page** 
+* The landing page was the basis for the site design and colour scheme.
+* The logo was the starting point and the site owner wanted a simple black and white "no frills" aestheitc.
+* I like the idea of adding a kind of grey scale colour scheme to make the black and white feel a bit more high-end and sophoisticated.
+* I searched for a hero image that communicated the brand well and that had a grey/black aesthetic to help me develop a colour pallette. 
+* I used bootstrap styles for buttons and links but tried to target them with a more, grey, black and white colour scheme.
+* The landing page is also important not only to communicate immediately to the user about the site and the product, but also as a call to action using the Book now! button and the offer of a free consultation to hook the user into interacting with the site content.
 
+![landing-page](static/readme/testing/landing-page-logged-out.JPG)
 
-
+### **custom 404 page**
+* The custom 404 page let's user's know they are still connected to the site but on a non-existent page.
+* The navbar is extended from the base.html so users can easily navigate to the specific page they want.
+* The logo on this page also acts as a home navlink so users can easily find their way back.
+![404](static/readme/testing/custom_404.JPG)
 [Back to top](#contents)
 
-#### **Landing page**
-* The landing page features the hero image.
-* There is also a text overlay on the hero image with a call to action "Book Now!" button, as well as a short description of what's on offer.
-* The book now button takes authorised user's to the booking form, but unauthorised user's are directed to the login form.
+### **footer**
+* For the moment the footer only features generic social media links but could potentially feature the site owner's business profile links.
 
-![landing](static/images/readme_images/)
-
-#### **Footer**
-* The footer contains links social media as well as copyright information.
-
-
-![Footer](static/images/readme_images/footer.jpg)
-
-[Back to top](#contents)
-#### **Login Page**
-* The login page was built using Django AllAuth. 
-* I imported the template and gave it some basic styling using bootstrap. I also extended my base template so the user stays on the page when logging in and changed the text.
-* The login page contains a link to the sign-up page so new users can register their accounts.
-
-![Login](static/images/readme_images/login.jpg)
-
-[Back to top](#contents)
-#### **Sign Up Page**
-* The sign up page is also from the authentication module allauth. 
-* I imported the template and gave it some basic styling using bootstrap.
-* Once signed up the user is redirected to the home page.
-
-![Sign up](static/images/readme_images/sign_up.jpg)
-
-[Back to top](#contents)
-#### **Booking Page**
-* The place booking page is only accessible when logged in. If you are not logged in you will get redirected to the login page instead.
-* The form contains all the necessary fields for the trainer to prepare for the consultation.
-* The datepicker is the standard HTML element for picking dates. 
-* In the model, there is a function to validate that the booking can't be done on a date in the past. 
-* In the form itself there is also a validation that disables dates that are closer than two days in the future. 
-* There is also a limit that you can't book more than 60 days in advance
-
-![Place booking](static/images/readme_images/)
-
-
-[Back to top](#contents)
-
-#### **User Profile**
-* A page where the user can view their upcoming appointments with the trainer.
-* There is a cancel and change button for each appointment that takes the user to a new page to complete either of those actions. 
-
-
-![Edit Bookings](static/images/readme_images/)
-
-* When the user clicks "change" they are brought to a change appoinmtent form, which shows the date
-
-![Cancel Bookings](static/images/readme_images/)
-
-* When a user tries to cancel a booking, they are taken to a confirmation page first and aske dto press the cancle button to confirm delete.
-
-
-
-[Back to top](#contents)
-
-#### **Admin**
-* The trainer/admin can view, edit and delete all bookings via the admin panel.
-* They can view relevant information regarding the clients gender, health conditions and goals so that they can prepare for the pt session.
-* They can  also add appointments in the case that an appointment is made over the phone or via social media messaging apps. 
-* The trainer also has the ability to confirm a booking.
-
-![Admin panel](static/images/readme_images/)
-
-[Back to top](#contents)
-
+![footer](static/readme/testing/footer.JPG)
 
 ### **Future Features**
-* For now the client only wants a simple promotional site with a call to action in order to attract potential clients, but in the future as their online clientele grows, the site could feature a services/programmes section which could detail various packages, services and price points.
-* A personal information section in the profile UI that clients can update and edit in order to communicate there need and changing circumstances with trainers. 
+* For now the client only wants a simple promotional site with a call to action in order to attract potential clients, but in the future, the site could feature a services/programmes section which could detail various packages, services and price points for clients.
+* A personal information section in the profile that clients can update and edit in order to communicate there needs and changing circumstances with trainers. 
 * An onsite payment system using stripe so that the trainer can take payments upfront for consultations, programmes and online one-to-one training sessions.
 * A UI for the trainer which would allow them to manage bookings without having to go through the django admin panel.
 * Email confirmation of confirmed appointments and for the registration process.
-* A link to goodle calendar API to help users and admin keep track of appointments outside the app. 
+* A goodle calendar API to help users and admin keep track of appointments outside the app.
+* Social accounts login for google and other email accounts so that users don't necessarily have to create a new username and password to sign up.
+* I would like to improve on the booking system too. If I can find out how the trainer likes to manage their schedule it will be easier to apply more rules to the booking actions, like preventing bookings/cancellations within 24 or 48 hours. 
+* Implementing ajax for a more user friendly UI for booking. 
 
 [Back to top](#contents)
 ## **Technologies**
