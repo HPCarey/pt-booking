@@ -170,7 +170,11 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 ## **Technologies**
 ### **Languages and Frameworks** 
 * [Django](https://www.djangoproject.com/) 
-* [Bootstrap](https://getbootstrap.com/)
+    * [crsipy forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+    * [AllAuth](https://django-allauth.readthedocs.io/en/latest/)
+    * [dj_database_url](https://pypi.org/project/dj-database-url/)
+    * [psycopg2](https://pypi.org/project/psycopg2/)
+* [Bootstrap 5](https://getbootstrap.com/)
 * [HTML5](https://en.wikipedia.org/wiki/HTML)
 * [CSS3](https://en.wikipedia.org/wiki/CSS) 
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
@@ -180,33 +184,44 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 
 ### **Technologies Used** 
 * [Gitpod](https://gitpod.io/)
-* [Balsamiq](https://balsamiq.com/) 
 * [Cloudinary](https://cloudinary.com/) 
 * [Heroku](https://dashboard.heroku.com) 
 * [ElephantSQL](https://www.elephantsql.com/)
-* [PEP8 Validation](http://pep8online.com/)
 * [HTML Validation](https://validator.w3.org/)
 * [CSS Validation](https://jigsaw.w3.org/css-validator/) 
-* [JSHint Validation](https://jshint.com/) 
+* [CI Python Linter](https://pep8ci.herokuapp.com/) 
 * [Lucid chart](https://www.lucidchart.com/pages/)
-* [Font awesome](https://fontawesome.com/)
-* [Pairfonts](https://pairfonts.com/)
 * [Google fonts](https://fonts.google.com/)
 * [Balsamiq](https://balsamiq.com/wireframes/)
 * [Github](https://github.com/)
 * [Gitpod](https://gitpod.io/)
 * [Tiny PNG](https://tinypng.com/)
-* [Pixabay](https://pixabay.com)
-* [Unsplash](https://unsplash.com)
 * [Pexels](https://www.pexels.com)
 * [Eightshapes](https://contrast-grid.eightshapes.com/)
-* [rgbacolorpicker](https://rgbacolorpicker.com/hex-to-rgba)
 * [Am I responsive](https://ui.dev/amiresponsive)
 
 
 [Back to top](#contents)
-### **Libraries**
+### **Libraries/packages**
 The following libraries are used in the project and are located in the requirements.txt file.
+- asgiref==3.7.2
+- cloudinary==1.33.0
+- crispy-bootstrap5==0.7
+- dj-database-url==0.5.0
+- dj3-cloudinary-storage==0.0.6
+- Django==3.2.19
+- django-allauth==0.54.0
+- django-crispy-forms==2.0
+- django-summernote==0.8.20.0
+- gunicorn==20.1.0
+- oauthlib==3.2.2
+- psycopg2==2.9.6
+- PyJWT==2.7.0
+- python3-openid==3.2.0
+- pytz==2023.3
+- requests-oauthlib==1.3.1
+- sqlparse==0.4.4
+- urllib3==1.26.15
 
 ## **Testing**
 The testing documentation can be viewed [here](/TESTING.md)
@@ -307,7 +322,23 @@ Initial deployment to heroku was done early with the intention of making the fin
 
 [Back to top](#contents)
 
+### **Local Deployment**
+#### **Steps to Fork the repository**
 
+1. Log in to GitHub.
+2. Go to the repository [pt-booking](https://github.com/HPCarey/pt-booking).
+3. Click the Fork button in the top right hand corner.
+4. A copy of the repo will be available in your GitHub repositpries list
+
+#### **Steps to clone the repository**
+1. Log in to GitHub.
+2. Go to the repository [pt-booking](https://github.com/HPCarey/pt-booking).
+3. Click on the green code button next to the green gitpod button.
+4. Select how you would like to clone, ie. with HTTPS, SSH or GitHub CLI, and copy the link provided.
+5. Open the terminal of your IDE and change the current working directory to the location you want to use for the cloned directory.
+6. Type the git clone command followed by the link you copied in step 4.
+7. Set up your virtual environement and install the packages from requirements.txt.
+    - To install packages type the following command into the terminal: pip3 install -r requirements.txt
 ## **Credits**
 I used the following resources to help me plan, build and fix bugs in my project.
 
@@ -348,6 +379,7 @@ I'd also like to mention some of the projects of my fellow CI studens which help
 * [Locksmith Booking](https://github.com/spangen87/locksmith-booking) by [spangen87](https://github.com/spangen87)
 * [Sandra's Kitchen](https://github.com/devisis/sandras-kitchen) by [DevIsis](https://github.com/devisis)
 
+And I'd like to thank another fellow CI student [Lucimeri Andretta](https://github.com/luandretta) who shared her [TESTING.md](https://github.com/luandretta/network/blob/main/TESTING.md) file with me and answered some of my questions related to how to do the testing for this project.
 
 
 
