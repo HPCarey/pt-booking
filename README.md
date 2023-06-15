@@ -8,8 +8,8 @@ You can visit the live site [here](https://pt-booking.herokuapp.com/)
 ## Contents
 - [Planning and Project Conception ](#planning-and-project-conception)
     - [Project Goals](#project-goals)
-    - [User Stories](#user-stories)
     - [Agile Methodology](#agile-methodology)
+    - [User Stories](#user-stories)
     - [Wireframes](#wireframes)
     - [Database](#database)
     - [Design](#design)
@@ -19,7 +19,7 @@ You can visit the live site [here](https://pt-booking.herokuapp.com/)
 - [Technologies](#technologies)
     - [Languages and Frameworks](#languages-and-frameworks)
     - [Technologies Used](#technologies-used)
-    - [Libraries](#libraries)
+    - [Libraries and Packages](#libraries-and-packages)
 - [Testing](#testing)
     - [Manual Testing](/TESTING.md#manual-testing)
         - [Responsive Testing](/TESTING.md#responsive-testing)
@@ -33,12 +33,22 @@ You can visit the live site [here](https://pt-booking.herokuapp.com/)
 - [Bugs](#bugs)
     - [Unfixed Bugs](#unfixed-bugs)
 - [Deployment](#deployment)
+    - [Gitpod](#gitpod)
+    - [ElephantSQL](#elephantsql)
+    - [Gitpod](#gitpod)
+    - [Environmental variables](#environemental-variables-and-settingspy)
+    - [Heroku](#heroku)
+    - [Final Deployment](#final-deployment)
+- [Local Deployment](#local-deployment)
+    - [Forking](#steps-to-fork-the-repository)
+    - [Cloning](#steps-to-clone-the-repository)
+
 - [Credits](#credits)
 - [Acknowledgements](#acknowledgements)
 
 ## **Planning and Project Conception**
 ### **Project Goals**
-The aim of this project was to build a basic booking system for a site owner who is a personal trainer and wants to build a personal brand to promote themselves, attract an online clientele, and to trial a personal site which allows people to book appointments with them easily.  
+The aim of this project was to build a basic booking system for a site owner who is a personal trainer and wants to build a personal brand to promote themselves, attract an online clientele, and to trial the use of a small business site which allows people to book appointments with them easily.  
 #
 ### **Agile Methodology**
 #### **GitHub Project Board**
@@ -66,7 +76,7 @@ The aim of this project was to build a basic booking system for a site owner who
 ### **Wireframes**
 Wireframes were created using Balsamiq.
 
-* Originally the wireframe plans a profile page where users could view and potentially edit their personal information.
+* Originally the wireframe plans included a profile page where users could view and potentially edit their personal information.
 * I wanted to focus more on the booking aspect of the site so the personal information aspect did not get implemented but will be noted as a future feature as the site concept is tested and developed with the site owner.
 
 See [Wireframes.](static/readme/pt-booking-app.pdf)
@@ -126,6 +136,7 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 #
 ### **navbar**
 * The navbar is fully responsive and changes to reflect the user's logged-in or logged-out status.
+
 ![navbar-logged-in](static/readme/testing/logged-out-nav.JPG)
 ![navbar-logged-out](static/readme/testing/logged-in-nav.JPG)
 ![mobile-logged-out](static/readme/testing/mobile/logged-out-repsonsive-nav.jpg)
@@ -144,7 +155,7 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 * I like the idea of adding a kind of grey scale colour scheme to make the black and white feel a bit more high-end and sophoisticated.
 * I searched for a hero image that communicated the brand well and that had a grey/black aesthetic to help me develop a colour pallette. 
 * I used bootstrap styles for buttons and links but tried to target them with a more, grey, black and white colour scheme.
-* The landing page is also important not only to communicate immediately to the user about the site and the product, but also as a call to action using the Book now! button and the offer of a free consultation to hook the user into interacting with the site content.
+* The landing page is also important not only to communicate immediately to the user about the site and the product, but also as a call to action using the Book now! button to hook the user into interacting with the site content.
 
 ![landing-page](static/readme/testing/landing-page-logged-out.JPG)
 
@@ -155,6 +166,7 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 * The custom 404 page let's user's know they are still connected to the site but on a non-existent page.
 * The navbar is extended from the base.html so users can easily navigate to the specific page they want.
 * The logo on this page also acts as a home navlink so users can easily find their way back.
+
 ![404](static/readme/testing/custom_404.JPG)
 [Back to top](#contents)
 
@@ -213,7 +225,7 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 
 [Back to top](#contents)
 #
-### **Libraries/packages**
+### **Libraries and Packages**
 The following libraries are used in the project and are located in the requirements.txt file.
 - asgiref==3.7.2
 - cloudinary==1.33.0
@@ -253,7 +265,7 @@ The testing documentation can be viewed [here](/TESTING.md)
 
     - 500 error causing add_booking and update_booking form pages not to render.
 
-    - Etag errors when deploying to Heroku (not recorded in project board but present in commit messages). These turned out not to be bugs in the code but a common heroku deployment issue which corrects itself after a few deployment attempts. 
+    - Etag errors when deploying to Heroku (not recorded in project board but present in commit messages). These turned out not to be bugs in the code, but a common heroku deployment issue which corrects itself after a few deployment attempts. 
 * Other more minor issues and bugs that were fixed relatively quickly are recorded in the project board and issues.
 
 [Back to top](#contents)
@@ -266,11 +278,11 @@ The testing documentation can be viewed [here](/TESTING.md)
  
 * As such, I was informed by tutors and my mentor that as long as the deployed site is working then it's fine.
 
-* As a work around, I set a varaible in the env for DEBUG to be true and fetched the value of debug in settings.py to the env variable. The code implemented was as follows:
+* As a work around, I set a variable in the env for DEBUG to be true and fetched the value of debug in settings.py from the env variable. The code implemented was as follows:
 - env.py: os.environ['DEBUG'] = '1'
 - settings.py: DEBUG = 'DEBUG' in os.environ
 
-* For the final deployment and project submission I have set DEBUG back to False according to the submission guidelines. However if someone encounters this issue in local deployment, I have recorded the solution here and in the deployment instructions. 
+* While technically this workaround equates to  DEBUG=false unless using the local workspace with the env.py file, for the final deployment and project submission I have set DEBUG back to False according to the submission guidelines. However if someone encounters this issue in local deployment, I have recorded the solution here and in the deployment instructions. 
 
 - - -
 [Back to top](#contents)
@@ -311,8 +323,8 @@ Before deploying to heroku, an external database was created to host the app dat
 #### **Environemental variables and settings.py**
 1. Create the env.py file in the top level directory.
 2. Import os library and set the database url and a secret key variables.
-        - The database is your ElephantSQL URL
-        - The secret key you can make up or use a [generator](https://djecrety.ir/)
+    - The database is your ElephantSQL URL
+    - The secret key you can make up or use a [generator](https://djecrety.ir/)
 3. In settings.py, point to the env.py for the local server:
 
     ![settings](static/readme/deployment/import_env.JPG)
@@ -333,7 +345,7 @@ Before deploying to heroku, an external database was created to host the app dat
 13. Change the templates directory to TEMPLATES_DIR. 
 ![templates2](static/readme/deployment/templates_dir_2.JPG)
 
-14. Add the heroku hostname (herokuappname.herokuapp.com)to ALLOWED_HOSTS along with localhosts. 
+14. Add the heroku hostname (herokuappname.herokuapp.com) to ALLOWED_HOSTS along with localhosts. 
     - I have added the specific local host url instead of 'localhost' because at some point, it stopped allowing this access to the local browser.
     - If you want to use the app and localhost is not working, then replace it with you local browser url. 
 15. Create 3 new folders on the top level directory, named media, static and templates.
@@ -365,7 +377,7 @@ Initial deployment to heroku was done early with the intention of making the fin
 1. Set DEBUG to false.
     * NB: If you want to continue to interact with the local browser after this and you encounter an issue with the admin panel static files not loading, then refer to the [fixed bugs section](#unfixed-bugs) for a workaround.
     
-2. Underneath DEBUG, set a variable called X_FRAME_OPTIONS to 'SAMEORIGIN' to allow browser to user summernote editor.
+2. Underneath DEBUG, set a variable called X_FRAME_OPTIONS to 'SAMEORIGIN' to allow browser to use summernote editor.
 3. Save everything, git add, commit and push.
 4. Got to Heroku config vars and remove the DISABLE_COLLECSTATIC key value pair.
 5. Navigate to the deploy tab and follow the same steps as before to deploy.
@@ -378,7 +390,7 @@ Initial deployment to heroku was done early with the intention of making the fin
 1. Log in to GitHub.
 2. Go to the repository [pt-booking](https://github.com/HPCarey/pt-booking).
 3. Click the Fork button in the top right hand corner.
-4. A copy of the repo will be available in your GitHub repositpries list
+4. A copy of the repo will be available in your GitHub repositories list
 
 #### **Steps to clone the repository**
 1. Log in to GitHub.
@@ -417,9 +429,9 @@ This video helped me to research project ideas
 
 * [Django Tutorial](https://blog.devgenius.io/django-tutorial-on-how-to-create-a-booking-system-for-a-health-clinic-9b1920fc2b78)
 
-3. The following article helped me create the dropdown menu for the gender option in the appoinments model.
+3. The following article helped me create the dropdown menu for the gender option in the appointments model.
 * [Stack Overflow](https://stackoverflow.com/questions/31130706/dropdown-in-django-model)
-This one helped me to get the dropdown to display the gender choices to display using enums:
+* This one helped me to get the dropdown to display the gender choices to display using enums:
 * [tuto django](https://gdevops.gitlab.io/tuto_django/versions/3.0/enums/enums.html)
 
 4. This tutorial helped with creating a template view for delete confirmation.
@@ -433,7 +445,7 @@ This one helped me to get the dropdown to display the gender choices to display 
 
 - [djangodocs](https://docs.djangoproject.com/en/3.2/ref/forms/validation/)
 - [djangodocs](https://docs.djangoproject.com/en/3.2/ref/forms/validation/#cleaning-and-validating-fields-that-depend-on-each-other)
--[Stack Overflow](https://stackoverflow.com/questions/40443408/customize-non-form-errors-with-django-crispy-form)
+- [Stack Overflow](https://stackoverflow.com/questions/40443408/customize-non-form-errors-with-django-crispy-form)
 
 [Back to top](#contents)
 #
