@@ -30,8 +30,8 @@
 
     ![responsive](static/readme/testing/responsive.png)
 
-* The site was shown to be fully responsive, readble and functional on all of the tested devices.
-* One minot issue showed up with the buttons on the update form page which did not display side by side but rather one above the other on the Surface Pro, iPad mini, iPad Air and the Galaxy fold. This appeared tp be a minor issue only affecting UI design and not functionalit yor readability. On most devices it displayed correctly.
+* The site was shown to be fully responsive, readable and functional on all of the tested devices.
+* One minor issue showed up with the buttons on the update form page which did not display side by side but rather one above the other on the Surface Pro, iPad mini, iPad Air and the Galaxy fold. This appeared to be a minor issue only affecting UI design and not functionality or readability. On most devices it displayed correctly.
 
 * Site resposivity was also tested on Amiresponsive as seen in the README.
 * I also included some screenshots of features in mobile size in the user story testing to show the responsive design. 
@@ -74,8 +74,6 @@
 <summary>👇</summary>
 
 The User Stories and features were continuously tested during development and this testing was documented here and with screenshots of the features from the deployed site.
-
-There are several screenshots of the features in the [README.md](README.md) file.
 
 
 ### Epic 1: User Authorisation
@@ -145,7 +143,7 @@ There are several screenshots of the features in the [README.md](README.md) file
 #
 4. As a **Site User** I can **navigate through the site pages** so that **I can take actions and view information**
     - All navlinks and buttons take logged in users to the correct location.
-    - Navlinks have django tags to conditionally render active class changing color of the navlink to white ifuser is on that page.
+    - Navlinks have django tags to conditionally render active class changing color of the navlink to white if user is on that page.
     - The "Book Now" button and the "Book an Apppointment" navlink will take logged in users to the booking form.
     ![desktop-bookin-form](static/readme/testing/booking-form.JPG)
     ![mobile-logged-in-nav](static/readme/testing/mobile/add_booking_mobile_view.jpg)
@@ -248,7 +246,7 @@ There are several screenshots of the features in the [README.md](README.md) file
     ![mobile-timepicker](static/readme/testing/mobile/timepicker.jpg)
     ![mobile-datepicker](static/readme/testing/mobile/mobile-datepicker.jpg)
 
-    - The date field will throw an error
+    - As shown above, an error will be shown in the event that a user selects a date for which they already have a booking or if the select a date in the past. 
 
 [Back to top](#testing)
 #
@@ -295,14 +293,14 @@ There are several screenshots of the features in the [README.md](README.md) file
 
     ![desktop-change button](static/readme/testing/edit-form-past-date.jpg)
 
-    - The edit for contains 2 buttons, one to submit changes and one to "Don't change".
+    - The edit form contains 2 buttons, one to submit changes and one to "Don't change".
 
     ![desktop-change button](static/readme/testing/edit_form_buttons.JPG)
 
     - If the user clicks don't change, they will be redirected back to their appoiments page without saving any changes.
     - If the user clicks Submit changes and there are no field errors in the form then:
         1. The changes will be saved to the booking instance.
-        2. The user will be directed to the appointments page withthe update appoinment data.
+        2. The user will be directed to the appointments page with the updated appoinment data.
         3. A success message will be displayed to the user.
 
     ![desktop-change button](static/readme/testing/edit-booking-success.jpg)
@@ -325,14 +323,14 @@ There are several screenshots of the features in the [README.md](README.md) file
 
     - Authorised user can view their appointments in their Appointments page.
     - Each appointment displays a change and delete button as seen in the previous test case pictures.
-    - There is defensive programmingin place to prevent users from accidentally deleting an appointment.
-    - If a user clicks the delete button, they will be redirected to a confiramtion page where they will be asked to confirm their delete decision.
+    - There is defensive programming in place to prevent users from accidentally deleting an appointment.
+    - If a user clicks the delete button, they will be redirected to a confirmation page where they will be asked to confirm their delete decision.
 
     ![desktop-form-buttons](static/readme/testing/cancel-confirmation-page.JPG)
     ![mobile-form-buttons](static/readme/testing/mobile/cancel-confirmation-mobile.jpg)
 
     - If the user clicks "No Keep it", they will be redirected to the appointments page.
-    -If the user clicks "Yes, cancel it" then:
+    - If the user clicks "Yes, cancel it" then:
         1. The booking instance will be deleted.
         2. The user will be redirected back to the appointments page.
         3. A success message will be displayed confriming the cancellation of the appoinment.
@@ -435,12 +433,13 @@ HTML validation was done using
 4. Copy the source code and open the validator.
 5. Select Validate by direct input and paste the code into the validator field and click "Check"
 
-Below are the issues encountered during vinitial alidation: 
+Below are the issues encountered during initial validation: 
 
 **Home Page**
 
 * A warning to add a language attribute to the html tag
-* Several Info messages to remove trailing / from self-closing elements like <img> and <link>. I discovered that these were getting added automatically whenever I used the prettier command to tidy up the template code. 
+* Several Info messages to remove trailing / from self-closing elements like img and link. 
+* I discovered that these / were getting added automatically whenever I used the prettier command to tidy up the template code. 
     ![home-page](static/readme/testing/code-validation/hmtl-val-homepage.JPG)
 
     ![all-messages](static/readme/testing/code-validation/trailing-slash-errors.JPG)
@@ -467,7 +466,7 @@ Below are the issues encountered during vinitial alidation:
 **Add booking form page**
 
 * An attribute error for using "placeholder" with date input. The source of this error was in the forms.py date widget. I simply removed the placeholder attribute.
-* The end tag error and unlcosed element were related. The both errors were dealt with upon locating the unclosed div and closing it.
+* The end tag error and unlcosed element were related. Both errors were dealt with upon locating the unclosed div and closing it.
 
     ![booking-page](static/readme/testing/code-validation/booking_form_validator_errors.JPG)
 
@@ -503,6 +502,7 @@ Below are the issues encountered during vinitial alidation:
     ![booking-page](static/readme/testing/code-validation/cancel_confirmation_error.JPG)
 
 * Results after removing the unneeded attribute:
+
     ![booking-page](static/readme/testing/code-validation/cancel-page-final.JPG)
 
 
