@@ -121,6 +121,8 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 * The logo is also featured on the custom 404 page.
 ![logo](static/images/logo_original.jpeg)
 
+[Back to top](#contents)
+#
 ### **navbar**
 * The navbar is fully responsive and changes to reflect the user's logged-in or logged-out status.
 ![navbar-logged-in](static/readme/testing/logged-out-nav.JPG)
@@ -133,6 +135,8 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 * I wanted to feature a dropdown menu in the navabr to have the option of adding more features for returning users in  the future. 
 * In the future, the nav dropdown could feature a personal profile containing client health and fitness information and goals, an appointments history and/or purchase history, and a programmes page featuring their personalised training programme from their trainer.
 
+[Back to top](#contents)
+#
 ### **Landing page** 
 * The landing page was the basis for the site design and colour scheme.
 * The logo was the starting point and the site owner wanted a simple black and white "no frills" aestheitc.
@@ -143,6 +147,9 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 
 ![landing-page](static/readme/testing/landing-page-logged-out.JPG)
 
+
+[Back to top](#contents)
+#
 ### **custom 404 page**
 * The custom 404 page let's user's know they are still connected to the site but on a non-existent page.
 * The navbar is extended from the base.html so users can easily navigate to the specific page they want.
@@ -155,6 +162,8 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 
 ![footer](static/readme/testing/footer.JPG)
 
+[Back to top](#contents)
+#
 ### **Future Features**
 * For now the client only wants a simple promotional site with a call to action in order to attract potential clients, but in the future, the site could feature a services/programmes section which could detail various packages, services and price points for clients.
 * A personal information section in the profile that clients can update and edit in order to communicate there needs and changing circumstances with trainers. 
@@ -165,7 +174,7 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 * Social accounts login for google and other email accounts so that users don't necessarily have to create a new username and password to sign up.
 * I would like to improve on the booking system too. If I can find out how the trainer likes to manage their schedule it will be easier to apply more rules to the booking actions, like preventing bookings/cancellations within 24 or 48 hours. 
 * Implementing ajax for a more user friendly UI for booking. 
-
+- - -
 [Back to top](#contents)
 ## **Technologies**
 ### **Languages and Frameworks** 
@@ -181,7 +190,7 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 [Back to top](#contents)
-
+#
 ### **Technologies Used** 
 * [Gitpod](https://gitpod.io/)
 * [Cloudinary](https://cloudinary.com/) 
@@ -202,6 +211,7 @@ See [Wireframes.](static/readme/pt-booking-app.pdf)
 
 
 [Back to top](#contents)
+#
 ### **Libraries/packages**
 The following libraries are used in the project and are located in the requirements.txt file.
 - asgiref==3.7.2
@@ -223,6 +233,9 @@ The following libraries are used in the project and are located in the requireme
 - sqlparse==0.4.4
 - urllib3==1.26.15
 
+- - -
+[Back to top](#contents)
+
 ## **Testing**
 The testing documentation can be viewed [here](/TESTING.md)
 
@@ -232,11 +245,17 @@ The testing documentation can be viewed [here](/TESTING.md)
 
 * I have recorded details of bugs and solutions in the [Project Board](https://github.com/users/HPCarey/projects/4/views/1).
 * The bugs can also be accessed in the [issues](https://github.com/HPCarey/pt-booking/issues)
-* For both project bard and issues, bugs can be accessed via the "bugs" label.
+* For both project board and issues, bugs can be accessed via the "bugs" label.
 * Here is a list of some of the more prominent bugs. The troubleshooting steps and solutions can be seen in the project board and issues.
-    -Django empty form submisssions and form submissions with certain empty fields would not display an error message to the user, despite not being treated as validated forms and not being saved. 
 
+    - Django empty form submisssions and form submissions with certain empty fields would not display an error message to the user, despite not being treated as validated forms and not being saved. 
 
+    - 500 error causing add_booking and update_booking form pages not to render.
+
+    - Etag errors when deploying to Heroku (not recorded in project board but present in commit messages). These turned out not to be bugs in the code but a common heroku deployment issue which corrects itself after a few deployment attempts. 
+* Other more minor issues and bugs that were fixed relatively quickly are recorded in the project board and issues.
+
+- - -
 [Back to top](#contents)
 ## **Deployment**
 
@@ -255,6 +274,8 @@ This project was created using the Code Institute
 8. Add project to INSALLED_APPS
 9. Migrate changes and run server locally to check it's working
 
+[Back to top](#contents)
+#
 #### **ElephantSQL**
 Before deploying to heroku, an external database was created to host the app data.
 1. Create an [ElephantSQL](https://www.elephantsql.com/) account. Code Institute provides the steps to do that [here](https://code-institute-students.github.io/deployment-docs/02-elephantsql/elephantsql-01-sign-up).
@@ -266,6 +287,9 @@ Before deploying to heroku, an external database was created to host the app dat
 7. Copy the database URL using the copy icon. 
 8. Add this database url to your env file.
 9. Later you will also add this url to your Heroku Config Vars.
+
+[Back to top](#contents)
+#
 
 #### **Environemental variables and settings.py**
 1. Create the env.py file in the top level directory.
@@ -298,9 +322,11 @@ Before deploying to heroku, an external database was created to host the app dat
 15. Create 3 new folders on the top level directory, named media, static and templates.
 16. Create a Procfile and add web: gunicorn PROJ_NAME.wsgi
 17. Check all migrations have been made, save and git add, commit and push.
-18. App is ready for initial deployment to heroku.  
+18. App is ready for initial deployment to heroku. 
 
-[Back to top](#contents)
+[Back to top](#contents) 
+#
+
 #### **Heroku**
 Initial deployment to heroku was done early with the intention of making the final deployment process more smooth.
 1. Log in to [Heroku](https://www.heroku.com/).
@@ -316,6 +342,8 @@ Initial deployment to heroku was done early with the intention of making the fin
 10. Scroll down and deploy branch.
 11. Finally click the open app button once the build is finished.
 
+[Back to top](#contents)
+#
 #### **Final Deployment**
 1. Set DEBUG to false.
 2. Underneath DEBUG, set a variable called X_FRAME_OPTIONS to 'SAMEORIGIN' to allow browser to user summernote editor.
@@ -324,7 +352,7 @@ Initial deployment to heroku was done early with the intention of making the fin
 5. Navigate to the deploy tab and follow the same steps as before to deploy.
 
 [Back to top](#contents)
-
+#
 ### **Local Deployment**
 #### **Steps to Fork the repository**
 
@@ -342,6 +370,9 @@ Initial deployment to heroku was done early with the intention of making the fin
 6. Type the git clone command followed by the link you copied in step 4.
 7. Set up your virtual environement and install the packages from requirements.txt.
     - To install packages type the following command into the terminal: pip3 install -r requirements.txt
+
+- - -
+[Back to top](#contents)
 ## **Credits**
 I used the following resources to help me plan, build and fix bugs in my project.
 
@@ -356,6 +387,8 @@ Hero Image
 * [Responsive Bootstrap Website Tutorial with Full Screen Landing Page](https://www.youtube.com/watch?v=Zn64_IVLO88&ab_channel=DrewRyan):
 This video helped me to research project ideas
 
+[Back to top](#contents)
+#
 ### Code Credits and Sources:
 1. This project was created using the guidelines from the Hello Django and I think therefore I blog walkthrough projects and the django blog start files from Code Institute.
 
@@ -381,6 +414,9 @@ This one helped me to get the dropdown to display the gender choices to display 
 
 - [djangodocs](https://docs.djangoproject.com/en/3.2/ref/forms/validation/)
 - [djangodocs](https://docs.djangoproject.com/en/3.2/ref/forms/validation/#cleaning-and-validating-fields-that-depend-on-each-other)
+
+[Back to top](#contents)
+#
 ### Troubleshooting and bug solution sources:
 1. Django empty form field error not displaying. Solution source:
 - [Stack Overflow](https://stackoverflow.com/questions/69015407/html5-form-validation-message-doesnt-show-when-scroll-behaviour-is-set-to-smoo).
@@ -401,6 +437,9 @@ Source:
 Soucres: 
 - [Stack Overflow](https://stackoverflow.com/questions/55404397/how-to-use-timeinput-widget-in-django-forms)  
 - [Stack Overflow](https://stackoverflow.com/questions/55404397/how-to-use-timeinput-widget-in-django-forms)
+
+[Back to top](#contents)
+#
 ### Code Institute project sources:
 I'd also like to mention some of the projects of my fellow CI studens which helped me plan and execute parts of my project
 * [NailsbyFaar](https://github.com/DOdrums/PortfolioProjectFour/tree/main/salon) by [Dirk Ornee](https://github.com/DOdrums)
@@ -410,11 +449,7 @@ I'd also like to mention some of the projects of my fellow CI studens which help
 
 And I'd like to thank another fellow CI student [Lucimeri Andretta](https://github.com/luandretta) who shared her [TESTING.md](https://github.com/luandretta/network/blob/main/TESTING.md) file with me and answered some of my questions related to how to do the testing for this project.
 
-
-
-
-
 [Back to top](#contents)
 ## **Acknowledgements**
 
-To my mentor and everyone who offered advice and support on slack.
+To my mentor and everyone who offered advice and support on slack. And to all the tutors who helped solve critical issues time and again, thank you. 
