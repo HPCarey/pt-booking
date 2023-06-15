@@ -31,6 +31,7 @@ You can visit the live site [here](https://pt-booking.herokuapp.com/)
     - [Code Validation](/TESTING.md#code-validation)
 
 - [Bugs](#bugs)
+    - [Unfixed Bugs](#unfixed-bugs)
 - [Deployment](#deployment)
 - [Credits](#credits)
 - [Acknowledgements](#acknowledgements)
@@ -255,6 +256,22 @@ The testing documentation can be viewed [here](/TESTING.md)
     - Etag errors when deploying to Heroku (not recorded in project board but present in commit messages). These turned out not to be bugs in the code but a common heroku deployment issue which corrects itself after a few deployment attempts. 
 * Other more minor issues and bugs that were fixed relatively quickly are recorded in the project board and issues.
 
+[Back to top](#contents)
+#
+## **Unfixed bugs**
+* There was one issue I encountered that I couldn't completely solve even with the help of tutor support, so I have implemented a workaround.
+* When DEBUG is set to False, the static files for the django admin panel in the local browser are not being found and therefore the admin panel styles are not applied and the UI is not user friendly at all.
+
+* NNB: This is not the case for the deployed heroku app for which the admin panel static file are served and the UI displays as it should. 
+ 
+* As such, I was informed by tutors and my mentor that as long as the deployed site is working then it's fine.
+
+* As a work around, I set a varaible in the env for DEBUG to be true and fetched the value of debug in settings.py to the env variable. The code implemented was as follows:
+- env.py: os.environ['DEBUG'] = '1'
+- settings.py: DEBUG = 'DEBUG' in os.environ
+
+* For the final deployment and project submission I have set DEBUG back to False according to the submission guidelines. However if someone encounters this issue in local deployment, I have recorded the solution here and in the deployment instructions. 
+
 - - -
 [Back to top](#contents)
 ## **Deployment**
@@ -346,6 +363,8 @@ Initial deployment to heroku was done early with the intention of making the fin
 #
 #### **Final Deployment**
 1. Set DEBUG to false.
+    * NB: If you want to continue to interact with the local browser after this and you encounter an issue with the admin panel static files not loading, then refer to the [fixed bugs section](#unfixed-bugs) for a workaround.
+    
 2. Underneath DEBUG, set a variable called X_FRAME_OPTIONS to 'SAMEORIGIN' to allow browser to user summernote editor.
 3. Save everything, git add, commit and push.
 4. Got to Heroku config vars and remove the DISABLE_COLLECSTATIC key value pair.
@@ -414,6 +433,7 @@ This one helped me to get the dropdown to display the gender choices to display 
 
 - [djangodocs](https://docs.djangoproject.com/en/3.2/ref/forms/validation/)
 - [djangodocs](https://docs.djangoproject.com/en/3.2/ref/forms/validation/#cleaning-and-validating-fields-that-depend-on-each-other)
+-[Stack Overflow](https://stackoverflow.com/questions/40443408/customize-non-form-errors-with-django-crispy-form)
 
 [Back to top](#contents)
 #
