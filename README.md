@@ -230,8 +230,11 @@ The testing documentation can be viewed [here](/TESTING.md)
 
 ## **Bugs**
 
-* I have recorded details of bugs and solutions in the project boars user stories:
-[Project Board](https://github.com/users/HPCarey/projects/4/views/1)
+* I have recorded details of bugs and solutions in the [Project Board](https://github.com/users/HPCarey/projects/4/views/1).
+* The bugs can also be accessed in the [issues](https://github.com/HPCarey/pt-booking/issues)
+* For both project bard and issues, bugs can be accessed via the "bugs" label.
+* Here is a list of some of the more prominent bugs. The troubleshooting steps and solutions can be seen in the project board and issues.
+    -Django empty form submisssions and form submissions with certain empty fields would not display an error message to the user, despite not being treated as validated forms and not being saved. 
 
 
 [Back to top](#contents)
@@ -364,6 +367,8 @@ This video helped me to research project ideas
 
 3. The following article helped me create the dropdown menu for the gender option in the appoinments model.
 * [Stack Overflow](https://stackoverflow.com/questions/31130706/dropdown-in-django-model)
+This one helped me to get the dropdown to display the gender choices to display using enums:
+* [tuto django](https://gdevops.gitlab.io/tuto_django/versions/3.0/enums/enums.html)
 
 4. This tutorial helped with creating a template view for delete confirmation.
 * [openclassrooms](https://openclassrooms.com/en/courses/6967196-create-a-web-application-with-django/7349788-delete-objects-safely-with-user-confirmation)
@@ -372,6 +377,30 @@ This video helped me to research project ideas
 * [Stack Overflow](https://stackoverflow.com/questions/55404397/how-to-use-timeinput-widget-in-django-forms)
 * [Stack Overflow](https://stackoverflow.com/questions/51022722/how-to-restrict-date-and-time-in-django-bootstrap-datetimepicker-plus)
 
+6. Sources used to write clean_ methods to raise custom errors in forms.py for booking a date in the past and for age limits.
+
+- [djangodocs](https://docs.djangoproject.com/en/3.2/ref/forms/validation/)
+- [djangodocs](https://docs.djangoproject.com/en/3.2/ref/forms/validation/#cleaning-and-validating-fields-that-depend-on-each-other)
+### Troubleshooting and bug solution sources:
+1. Django empty form field error not displaying. Solution source:
+- [Stack Overflow](https://stackoverflow.com/questions/69015407/html5-form-validation-message-doesnt-show-when-scroll-behaviour-is-set-to-smoo).
+2. Deployment 500 server error solution sources: 
+- [crispy-form documentation](https://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs)
+- [Stack Overflow](https://stackoverflow.com/questions/65238459/templatedoesnotexist-at-users-register-bootstrap5-uni-form-html) 
+3. How to prepopulate edit form with the booking id data.
+Sources: 
+- [Youtube tutorial on get object or 404](https://www.youtube.com/watch?v=gRzx35vcS7g&ab_channel=MasterCodeOnline)
+- [Stack Overflow](https://stackoverflow.com/questions/64165100/django-3-get-object-or-404-for-updateview)
+- [GeeksforGeeks](https://www.geeksforgeeks.org/get_object_or_404-method-in-django-models/)
+
+4. Appointment card not displaying in cancel booking confirmation page. 
+Source: 
+- [Stack Overflow](https://stackoverflow.com/questions/56374741/django-model-object-is-not-iterable)
+
+5. Make the date and timepicker more UI more user friendly:
+Soucres: 
+- [Stack Overflow](https://stackoverflow.com/questions/55404397/how-to-use-timeinput-widget-in-django-forms)  
+- [Stack Overflow](https://stackoverflow.com/questions/55404397/how-to-use-timeinput-widget-in-django-forms)
 ### Code Institute project sources:
 I'd also like to mention some of the projects of my fellow CI studens which helped me plan and execute parts of my project
 * [NailsbyFaar](https://github.com/DOdrums/PortfolioProjectFour/tree/main/salon) by [Dirk Ornee](https://github.com/DOdrums)
